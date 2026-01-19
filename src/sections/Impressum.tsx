@@ -36,7 +36,7 @@ export default function Impressum() {
               <div className="space-y-2">
                 <p>
                   <span className="font-semibold">Handelsregister:</span> HRB
-                  803328
+                  803338
                 </p>
                 <p>
                   <span className="font-semibold">Registergericht:</span>{" "}
@@ -46,7 +46,7 @@ export default function Impressum() {
                   <span className="font-semibold">
                     Umsatzsteuer-ID gem. § 27a UStG:
                   </span>{" "}
-                  DE 10987654
+                  DE -----
                 </p>
               </div>
             </section>
@@ -82,16 +82,11 @@ export default function Impressum() {
                   </a>
                 </p>
                 <p>
-                  <span className="font-semibold">Fax:</span> 0123/0123458
-                </p>
-                <p>
                   <span className="font-semibold">Website:</span>{" "}
                   <a
-                    href="http://www.boedefuelling.com"
-                    className="text-blue-600 hover:text-blue-800"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    www.boedefuelling.com
+                    href="https://boedefuelling.com"
+                    className="text-blue-600 hover:text-blue-800">
+                    https://boedefuelling.com
                   </a>
                 </p>
               </div>
