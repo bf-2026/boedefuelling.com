@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, XCircle } from "lucide-react";
 
 const problemsSolutions = [
   {
