@@ -1,0 +1,116 @@
+import { useNavigate } from "react-router-dom";
+import { ChevronLeft } from "lucide-react";
+
+export default function Impressum() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="min-h-screen bg-slate-50">
+      <div className="container mx-auto px-4 py-16">
+        <button
+          onClick={() => navigate("/")}
+          className="flex items-center gap-2 text-slate-600 hover:text-slate-900 mb-8 transition-colors">
+          <ChevronLeft size={20} />
+          Zurück zur Startseite
+        </button>
+
+        <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-sm p-8 md:p-12">
+          <h1 className="text-4xl font-bold text-slate-900 mb-8">Impressum</h1>
+
+          <div className="space-y-8 text-slate-700">
+            <section>
+              <h2 className="text-xl font-semibold text-slate-900 mb-4">
+                Anbieter
+              </h2>
+              <div className="space-y-2">
+                <p>BoedeFuelling UG (haftungsbeschränkt)</p>
+                <p>Finkenweg 21</p>
+                <p>71065 Sindelfingen</p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-slate-900 mb-4">
+                Registrierung
+              </h2>
+              <div className="space-y-2">
+                <p>
+                  <span className="font-semibold">Handelsregister:</span> HRB
+                  803328
+                </p>
+                <p>
+                  <span className="font-semibold">Registergericht:</span>{" "}
+                  Amtsgericht Stuttgart
+                </p>
+                <p>
+                  <span className="font-semibold">
+                    Umsatzsteuer-ID gem. § 27a UStG:
+                  </span>{" "}
+                  DE 10987654
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-slate-900 mb-4">
+                Geschäftsführer
+              </h2>
+              <p>
+                Vertretungsberechtigter Geschäftsführer: Lucas Ji-Yan Fülling
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-slate-900 mb-4">
+                Kontakt
+              </h2>
+              <div className="space-y-2">
+                <p>
+                  <span className="font-semibold">E-Mail:</span>{" "}
+                  <a
+                    href="mailto:kontakt@beispielug.de"
+                    className="text-blue-600 hover:text-blue-800">
+                    lucas@boedefuelling.com
+                  </a>
+                </p>
+                <p>
+                  <span className="font-semibold">Telefon:</span>{" "}
+                  <a
+                    href="tel:+49123012345"
+                    className="text-blue-600 hover:text-blue-800">
+                    0123/0123456
+                  </a>
+                </p>
+                <p>
+                  <span className="font-semibold">Fax:</span> 0123/0123458
+                </p>
+                <p>
+                  <span className="font-semibold">Website:</span>{" "}
+                  <a
+                    href="http://www.boedefuelling.com"
+                    className="text-blue-600 hover:text-blue-800"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    www.boedefuelling.com
+                  </a>
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-slate-900 mb-4">
+                Inhaltlich Verantwortlicher
+              </h2>
+              <p className="mb-2">gem. § 18 Abs. 2 MStV:</p>
+              <div className="space-y-2">
+                <p>Andreas Beispielmann</p>
+                <p>E-Mail: kontakt@beispielug.de</p>
+                <p>Telefon: 0123/0123456</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

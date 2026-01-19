@@ -1,4 +1,4 @@
-import { Button } from '../components/ui/Button';
+import { Button } from "../components/ui/Button";
 
 export default function Urgency() {
   return (
@@ -8,16 +8,25 @@ export default function Urgency() {
           Warum jetzt handeln?
         </h2>
         <div className="text-lg text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed text-left space-y-4">
-           <p className="font-semibold mb-2">KI ist kein Zukunftsthema mehr – sie entscheidet heute über Marktanteile.</p>
-           <ul className="list-disc pl-5 space-y-2">
-             <li>Wettbewerber investieren bereits in produktive KI-Systeme</li>
-             <li>Wissensverluste und Ineffizienzen nehmen zu</li>
-             <li>Integrationsaufwand und Kosten steigen mit jedem Jahr</li>
-             <li>Frühstarter sichern sich dauerhafte Kostenvorteile</li>
-             <li>Jeder Monat ohne KI-Strategie kostet Zeit, Effizienz und Umsatz</li>
-           </ul>
+          <p className="font-semibold mb-2">
+            KI ist kein Zukunftsthema mehr – sie entscheidet heute über
+            Kostenvorteile.
+          </p>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              Ihre Wettbewerber investieren bereits in produktive KI-Systeme
+            </li>
+            <li>Wissensverluste und Ineffizienzen nehmen zu</li>
+            <li>Integrationsaufwand und Kosten steigen mit jedem Jahr</li>
+            <li>Frühstarter sichern sich dauerhafte Kostenvorteile</li>
+            <li>
+              Jeder Monat ohne KI-Strategie kostet Zeit, Effizienz und Umsatz
+            </li>
+          </ul>
         </div>
-        <Button size="lg" className="rounded-full bg-slate-900 text-white shadow-xl hover:bg-slate-800">
+        <Button
+          size="lg"
+          className="rounded-full bg-slate-900 text-white shadow-xl hover:bg-slate-800">
           Jetzt Vorsprung sichern
         </Button>
       </div>
