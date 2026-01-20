@@ -39,6 +39,7 @@ export default function Header() {
         </nav>
 
         <Button
+          href="https://cal.com/lucas-fuelling-ytra7k/30min?overlayCalendar=true"
           variant="brand"
           className="rounded-full shadow-brand-primary/20">
           Kontakt aufnehmen

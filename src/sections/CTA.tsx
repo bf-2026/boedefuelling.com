@@ -16,7 +16,7 @@ export default function CTA() {
           <Button
             href="https://cal.com/lucas-fuelling-ytra7k/30min?overlayCalendar=true"
             variant="brand"
-            size="lg"
+            size="default"
             className="rounded-full shadow-lg h-14 px-10 text-lg">
             Kontakt aufnehmen
           </Button>
