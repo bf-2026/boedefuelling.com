@@ -78,7 +78,7 @@ export default function Impressum() {
                   <a
                     href="tel:+49123012345"
                     className="text-blue-600 hover:text-blue-800">
-                    0123/0123456
+                    +49-123/0123456
                   </a>
                 </p>
                 <p>
@@ -98,9 +98,9 @@ export default function Impressum() {
               </h2>
               <p className="mb-2">gem. § 18 Abs. 2 MStV:</p>
               <div className="space-y-2">
-                <p>Andreas Beispielmann</p>
-                <p>E-Mail: kontakt@beispielug.de</p>
-                <p>Telefon: 0123/0123456</p>
+                <p>Lucas Ji-Yan Fülling</p>
+                <p>E-Mail: lucas@boedefuelling.com</p>
+                <p>Telefon: +886-933952299</p>
               </div>
             </section>
           </div>

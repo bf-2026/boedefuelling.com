@@ -25,6 +25,7 @@ export default function Urgency() {
           </ul>
         </div>
         <Button
+          href="https://cal.com/lucas-fuelling-ytra7k/30min?overlayCalendar=true"
           size="lg"
           className="rounded-full bg-slate-900 text-white shadow-xl hover:bg-slate-800">
           Jetzt Vorsprung sichern

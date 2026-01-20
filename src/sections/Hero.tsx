@@ -36,6 +36,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}>
           <Button
+            href="https://cal.com/lucas-fuelling-ytra7k/30min?overlayCalendar=true"
             variant="brand"
             size="lg"
             className="rounded-full text-base font-semibold px-8 shadow-xl shadow-brand-primary/20">

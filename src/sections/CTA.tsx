@@ -14,6 +14,7 @@ export default function CTA() {
             Unternehmen schafft.
           </p>
           <Button
+            href="https://cal.com/lucas-fuelling-ytra7k/30min?overlayCalendar=true"
             variant="brand"
             size="lg"
             className="rounded-full shadow-lg h-14 px-10 text-lg">
