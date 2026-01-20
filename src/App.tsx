@@ -12,7 +12,7 @@ import ProcessAutomation from "./sections/ProcessAutomation";
 import ProblemsSolutions from "./sections/ProblemsSolutions";
 import Trust from "./sections/Trust";
 import Impressum from "./sections/Impressum";
-import ProjectPhases from "./sections/Projectphases";
+import ProjectPhases from "./sections/ProjectPhases";
 
 function HomePage() {
   return (
