@@ -11,9 +11,9 @@ interface Phase {
 const ProjectPhases: React.FC = () => {
   const phases: Phase[] = [
     {
-      title: "Workshops zur Anforderungsanalyse",
+      title: "Anforderungsanalyse",
       description:
-        "In Workshops ermitteln wir Ihre Anforderungen und entwickeln einen konkreten Projektfahrplan mit messbaren Zielen.",
+        "In einem kurzen 30 min Gespräch ermitteln wir Ihre Anforderungen und entwickeln einen konkreten Projektfahrplan mit messbaren Zielen.",
       icon: <Lightbulb className="w-6 h-6 text-brand-primary" />,
     },
     {

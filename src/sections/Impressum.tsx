@@ -68,7 +68,7 @@ export default function Impressum() {
                 <p>
                   <span className="font-semibold">E-Mail:</span>{" "}
                   <a
-                    href="mailto:kontakt@beispielug.de"
+                    href="mailto:lucas@boedefuelling.com"
                     className="text-blue-600 hover:text-blue-800">
                     lucas@boedefuelling.com
                   </a>
@@ -76,9 +76,9 @@ export default function Impressum() {
                 <p>
                   <span className="font-semibold">Telefon:</span>{" "}
                   <a
-                    href="tel:+49123012345"
+                    href="tel:+4915730967315"
                     className="text-blue-600 hover:text-blue-800">
-                    +49-123/0123456
+                    +49-15730967315
                   </a>
                 </p>
                 <p>
