@@ -13,6 +13,7 @@ import ProblemsSolutions from "./sections/ProblemsSolutions";
 import Trust from "./sections/Trust";
 import Impressum from "./sections/Impressum";
 import ProjectPhases from "./sections/ProjectPhases";
+import Services from "./sections/Services";
 
 function HomePage() {
   return (
@@ -20,6 +21,7 @@ function HomePage() {
       <Header />
       <main>
         <Hero />
+        <Services />
         <ValueProps />
         <Solution />
         <ProcessAutomation />
