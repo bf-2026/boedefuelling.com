@@ -1,9 +1,8 @@
 ## Dienstleistungen:
 
-# Interner Wissenschatbot
+# KI Chatbots
 
-Use-Case: (technischen Kundensupport)
-Chatten mit firmeninternen Betriebsanleitungen, Handbüchern und Dokumentationen. Beispiel "Maschine zeigt Fehlercode 123. Wie behebe ich diesen Fehler? Welche Ursachen haben wir aus Servicedokumentationen?
+KI Chatbots auf Basis von firmeninternem Know-How. Durch die zentrale Bereitstellung von Firmenknow-how mit einem KI-Chatbot steigern Sie die Effizienz Ihrer Mitarbeiter. Kein langes suchen in Betriebsanleitungen, Handbüchern oder Dokumentationen. Beispiel "Maschine zeigt Fehlercode 123. Wie behebe ich diesen Fehler? Welche Ursachen haben wir aus Servicedokumentationen?
 
 Use-Case: (Projektbasierte Arbeit)
 Chatten mit firmentinternen Projektdokumentationen. Beispiel "Welche ähnlichen Projekte haben wir bereits gemacht?" oder "Wie wurde die Anbindung der Maschine bei Kunde XY realisiert?"
@@ -11,7 +10,7 @@ Chatten mit firmentinternen Projektdokumentationen. Beispiel "Welche ähnlichen 
 Use-Case: (Schulung & Onboarding)
 Neue Mitarbeiter erhalten schnelle Antworten auf Fragen zu Prozessen, Richtlinien, Systemen und internen Abläufen. Beispiel "Wie läuft der Onboarding-Prozess ab?" oder "Welche Dokumentationen muss ich als neuer Techniker kennen?" oder "Wie dokumentiere ich ein Kundenprojekt?"
 
-# Automatisierungen von repititven Aufgaben
+# KI Automatisierungen
 
 Use-Case: (Rechnungen)
 Rechnung geht raus, automatische Erinnerung, Prüfung, ob Rechnung beglichen worden ist.

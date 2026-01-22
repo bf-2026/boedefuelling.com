@@ -11,13 +11,23 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-6 inline-block">
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-brand-primary/10 border border-brand-primary/30 rounded-full text-sm font-medium text-brand-primary">
+            Für Maschinenbauer, Zulieferer und Ingenieurbüros
+          </span>
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 max-w-4xl mx-auto leading-tight">
           Mit KI zum messbaren{" "}
-          <span className="text-brand-primary">Wettbewerbsvorteil.</span>
+          <span className="text-slate-900">Wettbewerbsvorteil.</span>
         </motion.h1>
 
         <motion.p
@@ -25,10 +35,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-slate-600 mb-10 max-w-3xl mx-auto">
-          Wir helfen mittelständischen Unternehmen, ihre Prozesse und ihr Wissen
+          Wir helfen Unternehmen aus der Industrie, ihre Prozesse und ihr Wissen
           in KI-gestützte Systeme zu verwandeln – Lösungen, die nicht
-          experimentell, sondern direkt messbar Umsatz steigern, Kosten senken
-          und Organisationen zukunftssicher machen – bei voller Datenhoheit.
+          experimentell, sondern direkt messbar Effizienz erhöhen und Kosten
+          senken.
         </motion.p>
 
         <motion.div
