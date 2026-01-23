@@ -1,202 +1,81 @@
-import { motion } from "framer-motion";
-import {
-  MessageSquare,
-  Zap,
-  Users,
-  FileText,
-  CheckCircle2,
-  Mail,
-} from "lucide-react";
-
-interface Service {
+import { Button } from "../components/ui/Button";
+// Define the shape of the props
+interface FeatureCardProps {
   title: string;
   description: string;
-  icon: React.ReactNode;
-  category: "knowledge" | "automation";
-  details: string[];
 }
+const FeatureCard = ({ title, description }: FeatureCardProps) => (
+  <div className="bg-slate-50 p-6 rounded-lg shadow-sm border border-slate-100">
+    <h3 className="text-xl font-bold text-slate-800 mb-3">{title}</h3>
+    <p className="text-slate-600 leading-relaxed text-sm">{description}</p>
+  </div>
+);
 
 const Services = () => {
-  const services: Service[] = [
-    {
-      title: "Technischer Kundensupport",
-      description:
-        "Chatten mit firmeninternen Betriebsanleitungen, Handbüchern und Dokumentationen.",
-      icon: <MessageSquare className="w-6 h-6" />,
-      category: "knowledge",
-      details: [
-        "Fehlercode-Lösungen in Echtzeit",
-        "Zugriff auf Service-Dokumentationen",
-        "Schnelle Lösungsfindung",
-      ],
-    },
-    {
-      title: "Projektbasierte Arbeit",
-      description:
-        "Chatten mit firmeninternen Projektdokumentationen und ähnlichen Fallstudien.",
-      icon: <FileText className="w-6 h-6" />,
-      category: "knowledge",
-      details: [
-        "Ähnliche Projekte finden",
-        "Best Practices abrufen",
-        "Kundenanlage wiederverwenden",
-      ],
-    },
-    {
-      title: "Schulung & Onboarding",
-      description:
-        "Neue Mitarbeiter erhalten schnelle Antworten auf Fragen zu Prozessen, Richtlinien und Systemen.",
-      icon: <Users className="w-6 h-6" />,
-      category: "knowledge",
-      details: [
-        "Onboarding-Prozesse erklären",
-        "Relevante Dokumentationen filtern",
-        "Schnellere Lernkurve",
-      ],
-    },
-    {
-      title: "Rechnungsautomation",
-      description:
-        "Rechnung geht raus, automatische Erinnerung und Zahlungsprüfung.",
-      icon: <CheckCircle2 className="w-6 h-6" />,
-      category: "automation",
-      details: [
-        "Automatische Rechnungserstellung",
-        "Zahlungsstatus überwachen",
-        "Erinnerungen senden",
-      ],
-    },
-    {
-      title: "Preisprüfung & Einfügung",
-      description:
-        "Bot prüft Preise automatisch und pflegt diese ein. Bei Unstimmigkeiten Mitarbeiter-Eskalation.",
-      icon: <Zap className="w-6 h-6" />,
-      category: "automation",
-      details: [
-        "Automatische Preisvalidation",
-        "Intelligente Eskalation",
-        "Bis zu 80% weniger manuelle Eingaben",
-      ],
-    },
-    {
-      title: "Automatisierte Kundenpflege",
-      description:
-        "Willkommens-E-Mails, Dankeschön-Nachrichten und Follow-ups nach wichtigen Ereignissen.",
-      icon: <Mail className="w-6 h-6" />,
-      category: "automation",
-      details: [
-        "Willkommens-Sequenzen",
-        "Event-basierte Follow-ups",
-        "24/7 Kundenpflege",
-      ],
-    },
-  ];
-
-  const knowledgeServices = services.filter((s) => s.category === "knowledge");
-  const automationServices = services.filter(
-    (s) => s.category === "automation",
-  );
-
-  const ServiceCard = ({
-    service,
-    index,
-  }: {
-    service: Service;
-    index: number;
-  }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative h-full bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-lg transition-all duration-300 hover:border-brand-primary/30 overflow-hidden">
-      {/* Top accent border */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-primary to-brand-accent" />
-
-      {/* Icon container */}
-      <div className="mb-6 inline-flex p-4 rounded-xl bg-slate-50 text-brand-primary group-hover:bg-brand-primary/10 transition-colors">
-        {service.icon}
+  return (
+    <section className="max-w-6xl mx-auto px-4 py-16 font-sans bg-slate-50">
+      {/* --- Header Section --- */}
+      <div className="text-center mb-16">
+        <p className="text-brand-primary font-medium mb-2">
+          Ihr Partner für Effizienz und Digitalisierung
+        </p>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
+          Unsere Lösungen für <br /> Ihr Unternehmen
+        </h1>
+        <p className="text-slate-500 max-w-2xl mx-auto mb-8">
+          Wir bieten spezialisierte Lösungen, die Ihre Unternehmen
+          digitalisieren, Ihre Prozesse optimieren und Ihr Team spürbar
+          entlasten. Entdecken Sie, wie wir gemeinsam den Weg zu mehr Effizienz
+          und Struktur gestalten.
+        </p>
+        <Button
+          href="https://cal.com/lucas-fuelling-ytra7k/30min?overlayCalendar=true"
+          variant="brand"
+          size="lg"
+          className="rounded-full text-base font-semibold px-8 shadow-xl shadow-brand-primary/20">
+          Kostenfreie Use-Case Analyse buchen
+        </Button>
       </div>
 
-      {/* Content */}
-      <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-primary transition-colors">
-        {service.title}
-      </h3>
-
-      <p className="text-slate-600 text-sm mb-6 leading-relaxed">
-        {service.description}
-      </p>
-
-      {/* Details list */}
-      <ul className="space-y-2">
-        {service.details.map((detail, idx) => (
-          <li
-            key={idx}
-            className="flex items-start gap-3 text-sm text-slate-600">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-brand-primary mt-1.5 flex-shrink-0" />
-            {detail}
-          </li>
-        ))}
-      </ul>
-    </motion.div>
-  );
-
-  return (
-    <section className="py-24 bg-slate-50">
-      <div className="container mx-auto px-4 md:px-6">
-        {/* Main heading */}
-        <div className="text-center mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Unsere Dienstleistungen
-          </motion.h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Von der Wissenszentralisierung bis zur vollständigen
-            Prozessautomation – wir bieten maßgeschneiderte KI-Lösungen für Ihr
-            Unternehmen.
-          </p>
+      {/* --- First Row: Text Left, Image Right --- */}
+      <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+        <div className="space-y-6">
+          <FeatureCard
+            title="Effizienzsteigerung für Ihr Team"
+            description="Wir optimieren Fachprozesse & interne Abläufe – von Support, Preisprüfungen bis Verwaltung. Ihr Team wird spürbar entlastet!"
+          />
+          <FeatureCard
+            title="Mehr Zeit für das Wesentliche – ohne zusätzliche Mitarbeiter und Fachkräftestress"
+            description="Optimierte Prozesse sparen Zeit und reduzieren Ihren Personalbedarf. Wo früher zwei Mitarbeiter nötig waren, reicht heute einer. So bleibt mehr Zeit für das, was wirklich zählt"
+          />
         </div>
-
-        {/* Knowledge Services */}
-        <div className="mb-24">
-          <motion.h3
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl font-bold text-slate-900 mb-10 flex items-center gap-3">
-            <div className="w-1 h-8 bg-brand-primary rounded-full" />
-            KI mit Firmenwissen
-          </motion.h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {knowledgeServices.map((service, index) => (
-              <ServiceCard key={index} service={service} index={index} />
-            ))}
-          </div>
+        <div className="rounded-2xl overflow-hidden shadow-xl">
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+            alt="Team working on tablet"
+            className="w-full h-full object-cover"
+          />
         </div>
+      </div>
 
-        {/* Automation Services */}
-        <div>
-          <motion.h3
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-2xl font-bold text-slate-900 mb-10 flex items-center gap-3">
-            <div className="w-1 h-8 bg-brand-accent rounded-full" />
-            Prozessautomation
-          </motion.h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {automationServices.map((service, index) => (
-              <ServiceCard
-                key={index}
-                service={service}
-                index={index + knowledgeServices.length}
-              />
-            ))}
-          </div>
+      {/* --- Second Row: Image Left, Text Right --- */}
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="rounded-2xl overflow-hidden shadow-xl order-2 md:order-1">
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
+            alt="Office discussion"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="space-y-6 order-1 md:order-2">
+          <FeatureCard
+            title="Ein roter Faden für Ihre KI-Strategie"
+            description="Mit unserem KI-Fahrplan führen wir Sie von der Digitalisierung zur Automatisierung – lernen Sie aus den Fehlern anderer & optimieren Sie gezielt!"
+          />
+          <FeatureCard
+            title="Updates zu gesetzlichen Änderungen"
+            description="Bleiben Sie up to date: Wir informieren Sie über gesetzliche Änderungen rund um KI"
+          />
         </div>
       </div>
     </section>

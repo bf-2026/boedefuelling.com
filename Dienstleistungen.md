@@ -1,25 +1,23 @@
-## Dienstleistungen:
+# Dienstleistungen
 
-# KI Chatbots
+## KI Chatbots: Unternehmenswissen auf Abruf
 
-KI Chatbots auf Basis von firmeninternem Know-How. Durch die zentrale Bereitstellung von Firmenknow-how mit einem KI-Chatbot steigern Sie die Effizienz Ihrer Mitarbeiter. Kein langes suchen in Betriebsanleitungen, Handbüchern oder Dokumentationen. Beispiel "Maschine zeigt Fehlercode 123. Wie behebe ich diesen Fehler? Welche Ursachen haben wir aus Servicedokumentationen?
+Verwandeln Sie statische Dokumente in eine Wissensdatenbank. Die KI greift auf Ihr Firmen Know-how zu, um Mitarbeitern sekundenschnell präzise Antworten zu liefern.
 
-Use-Case: (Projektbasierte Arbeit)
-Chatten mit firmentinternen Projektdokumentationen. Beispiel "Welche ähnlichen Projekte haben wir bereits gemacht?" oder "Wie wurde die Anbindung der Maschine bei Kunde XY realisiert?"
+### Ihre Vorteile
 
-Use-Case: (Schulung & Onboarding)
-Neue Mitarbeiter erhalten schnelle Antworten auf Fragen zu Prozessen, Richtlinien, Systemen und internen Abläufen. Beispiel "Wie läuft der Onboarding-Prozess ab?" oder "Welche Dokumentationen muss ich als neuer Techniker kennen?" oder "Wie dokumentiere ich ein Kundenprojekt?"
+- Zentraler Wissenszugriff: Schluss mit der mühsamen Suche in Handbüchern, Betriebsanleitungen oder verstaubten Ordnerstrukturen. Dateileichen
+- Wissenstransfer sichern: Erfahrungswerte aus alten Projekten bleiben im Unternehmen und sind für jeden sofort abrufbar.
+- Beschleunigte Einarbeitung: Neue Teammitglieder werden schneller produktiv, indem sie Prozesse und Richtlinien im Dialog erlernen.
 
-# KI Automatisierungen
+---
 
-Use-Case: (Rechnungen)
-Rechnung geht raus, automatische Erinnerung, Prüfung, ob Rechnung beglichen worden ist.
+## KI Automatisierung: Bye bye, repetitive Arbeit
 
-Use-Case: (Preisprüfung)
-Erhalt von Preisabschlüssen. Diese müssen manuell geprüft und eingepflegt werden.
-Ein Bot prüft den Preis und pflegt diesen automatisch ein. Bei Unstimmigkeiten gibt der Bot die Entscheidung weiter an einen Mitarbeiter.
+Wir eliminieren zeitfressende Routineaufgaben. Unsere KI-Agenten übernehmen die Verwaltung und Datenpflege, damit Ihr Team Zeit für wertschöpfende Aufgaben hat.
 
-Use-Case: (Automatisierte Kundenpflege)
-Automatisierter Versand von Willkommens-E-Mails, Dankeschön-Nachrichten oder Follow-ups nach wichtigen Ereignissen (z. B. nach Vertragsabschluss oder Projektende). Kontinuierliche Betreuung ohne manuellen Aufwand.
+### Ihre Vorteile
 
-Automatisiertes Projekt-Briefing: E-Mails und Dokumente werden per KI zusammengefasst, um ein standardisiertes Projekt-Briefing-Dokument zu generieren.
+- Intelligentes Belegwesen: Automatisierte Prüfung und Buchung von Rechnungen inklusive Überwachung von Zahlungseingängen und Mahnwesen.
+- Smartes Datenmanagement (z.B. Preisprüfung): Ein Bot prüft eingehende Preisabschlüsse automatisch gegen Ihre Vorgaben. Bei Unstimmigkeiten wird ein Mitarbeiter zur Entscheidung hinzugezogen (_Human-in-the-Loop_).
+- Automatisierte Kundenpflege: Versand von Willkommens-E-Mails, Dankeschön-Nachrichten oder Follow-ups nach Projektende – kontinuierliche Betreuung ohne manuellen Aufwand.
