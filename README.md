@@ -9,7 +9,11 @@ This website uses
 
 ## Getting started
 
-clone the repo
+### Download an IDE
+
+I recommend using [Visual Studio Code](https://code.visualstudio.com/) or Antigravity (https://antigravity.app/). I have both!
+
+### Clone the repo
 
 ```bash
 git clone https://github.com/bf-2026/boedefuelling.com.git
