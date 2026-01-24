@@ -13,13 +13,13 @@ const FeatureCard = ({ title, description }: FeatureCardProps) => (
 
 const Services = () => {
   return (
-    <section className="max-w-6xl mx-auto px-4 py-16 font-sans bg-slate-50">
+    <section className="max-w-6xl mx-auto px-4 py-16 bg-slate-50">
       {/* --- Header Section --- */}
       <div className="text-center mb-16">
         <p className="text-brand-primary font-medium mb-2">
           Ihr Partner für Effizienz und Digitalisierung
         </p>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight text-slate-900 mb-6">
           Unsere Lösungen für <br /> Ihr Unternehmen
         </h1>
         <p className="text-slate-500 max-w-2xl mx-auto mb-8">
