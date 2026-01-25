@@ -6,7 +6,6 @@ import Urgency from "./sections/Urgency";
 import Mission from "./sections/Mission";
 import CTA from "./sections/CTA";
 import Footer from "./sections/Footer";
-import ProcessAutomation from "./sections/ProcessAutomation";
 import ProblemsSolutions from "./sections/ProblemsSolutions";
 import Trust from "./sections/Trust";
 import Impressum from "./sections/Impressum";
@@ -29,7 +28,6 @@ function HomePage() {
         <Topseller />
         <ValueProps />
         <Services />
-        <ProcessAutomation />
         <ProblemsSolutions />
         <AIWorkflow />
         <Trust />

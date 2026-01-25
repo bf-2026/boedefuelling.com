@@ -1,7 +1,7 @@
 import { Button } from "../components/ui/Button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Cloud, Zap, Server, Database, Brain, BarChart3, Workflow, Bot, GitBranch, CheckCircle2, Lightbulb, Cog, Rocket, ArrowRight, Package } from "lucide-react";
+import { Zap, Server, Brain, BarChart3, Workflow, Bot, GitBranch, CheckCircle2, Lightbulb, Cog, Rocket } from "lucide-react";
 
 const words = [
   "Kosten senken",

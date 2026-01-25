@@ -1,4 +1,3 @@
-import { Button } from "../components/ui/Button";
 // Define the shape of the props
 interface FeatureCardProps {
   title: string;

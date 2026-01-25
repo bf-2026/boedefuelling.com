@@ -280,7 +280,7 @@ export default function TrainingsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {aiWorkshops.map((item, idx) => {
               const Icon = item.icon;
-              const levelColors = {
+              const levelColors: Record<string, string> = {
                 Foundation: "bg-blue-50 text-blue-700 border-blue-200",
                 Advanced: "bg-purple-50 text-purple-700 border-purple-200",
                 Strategic: "bg-orange-50 text-orange-700 border-orange-200",
@@ -363,7 +363,7 @@ export default function TrainingsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {cloudWorkshops.map((item, idx) => {
               const Icon = item.icon;
-              const levelColors = {
+              const levelColors: Record<string, string> = {
                 Foundation: "bg-blue-50 text-blue-700 border-blue-200",
                 Advanced: "bg-purple-50 text-purple-700 border-purple-200",
                 Strategic: "bg-orange-50 text-orange-700 border-orange-200",

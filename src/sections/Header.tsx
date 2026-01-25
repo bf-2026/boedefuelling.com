@@ -10,7 +10,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [language, setLanguage] = useState<"de" | "en">("de");
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [dropdownTimeout, setDropdownTimeout] = useState<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
