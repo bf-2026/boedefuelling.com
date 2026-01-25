@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { Zap, Server, Brain, BarChart3, Workflow, Bot, GitBranch, CheckCircle2, Lightbulb, Cog, Rocket } from "lucide-react";
 
 const words = [
-  "Kosten senken",
   "Effizienz steigern",
+  "Kosten senken",
   "Wettbewerbsvorteil generieren",
 ];
 
