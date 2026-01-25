@@ -1,7 +1,12 @@
 export default function Mission() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
+    <section className="py-16 bg-white relative overflow-hidden">
+      {/* Background Decoration */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 right-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-blob" />
+        <div className="absolute bottom-20 left-0 w-80 h-80 bg-brand-accent/5 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-blob animation-delay-2000" />
+      </div>
+      <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
         <div className="relative z-10">
           <h2 className="text-sm font-bold tracking-widest text-brand-primary uppercase mb-2">
             Unsere Mission

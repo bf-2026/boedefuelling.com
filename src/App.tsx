@@ -1,9 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import Header from "./sections/Header";
 import Hero from "./sections/Hero";
 import ValueProps from "./sections/ValueProps";
-import Solution from "./sections/Solution";
 import Urgency from "./sections/Urgency";
 import Mission from "./sections/Mission";
 import CTA from "./sections/CTA";
@@ -12,24 +10,31 @@ import ProcessAutomation from "./sections/ProcessAutomation";
 import ProblemsSolutions from "./sections/ProblemsSolutions";
 import Trust from "./sections/Trust";
 import Impressum from "./sections/Impressum";
-import ProjectPhases from "./sections/ProjectPhases";
+import AIWorkflow from "./sections/AIWorkflow";
 import Services from "./sections/Services";
+import Topseller from "./sections/Topseller";
+import ServicesPage from "./sections/pages/Services";
+import IndustriesPage from "./sections/pages/Industries";
+import CasesPage from "./sections/pages/Cases";
+import InsightsPage from "./sections/pages/Insights";
+import CompanyPage from "./sections/pages/Company";
+import CareersPage from "./sections/pages/Careers";
+import TrainingsPage from "./sections/pages/Trainings";
 
 function HomePage() {
   return (
     <Layout>
-      <Header />
       <main>
         <Hero />
-        <Services />
+        <Topseller />
         <ValueProps />
-        <Solution />
+        <Services />
         <ProcessAutomation />
         <ProblemsSolutions />
+        <AIWorkflow />
         <Trust />
         <Urgency />
         <Mission />
-        <ProjectPhases />
         <CTA />
       </main>
       <Footer />
@@ -47,6 +52,69 @@ function App() {
           element={
             <Layout>
               <Impressum />
+              <Footer />
+            </Layout>
+          }
+        />
+        <Route
+          path="/services"
+          element={
+            <Layout>
+              <ServicesPage />
+              <Footer />
+            </Layout>
+          }
+        />
+        <Route
+          path="/industries"
+          element={
+            <Layout>
+              <IndustriesPage />
+              <Footer />
+            </Layout>
+          }
+        />
+        <Route
+          path="/cases"
+          element={
+            <Layout>
+              <CasesPage />
+              <Footer />
+            </Layout>
+          }
+        />
+        <Route
+          path="/insights"
+          element={
+            <Layout>
+              <InsightsPage />
+              <Footer />
+            </Layout>
+          }
+        />
+        <Route
+          path="/trainings"
+          element={
+            <Layout>
+              <TrainingsPage />
+              <Footer />
+            </Layout>
+          }
+        />
+        <Route
+          path="/company"
+          element={
+            <Layout>
+              <CompanyPage />
+              <Footer />
+            </Layout>
+          }
+        />
+        <Route
+          path="/careers"
+          element={
+            <Layout>
+              <CareersPage />
               <Footer />
             </Layout>
           }

@@ -2,7 +2,7 @@ import { Button } from "../components/ui/Button";
 
 export default function Urgency() {
   return (
-    <section className="py-20 bg-brand-accent/5">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4 md:px-6 text-center">
         <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
           Warum jetzt handeln?

@@ -5,8 +5,8 @@ export default {
     extend: {
       colors: {
         brand: {
-          primary: "#0E9EFF", // Main blue
-          accent: "#05FFF2", // Cyan/Teal
+          primary: "#3B82F6", // Modern Blue
+          accent: "#14B8A6", // Sophisticated Teal
           dark: "#0F172A", // Slate 900
         },
       },

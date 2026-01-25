@@ -2,7 +2,7 @@ import { Button } from "../components/ui/Button";
 
 export default function CTA() {
   return (
-    <section className="bg-slate-50 py-20 border-t border-slate-200">
+    <section className="bg-white py-16 border-t border-slate-200/50">
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">

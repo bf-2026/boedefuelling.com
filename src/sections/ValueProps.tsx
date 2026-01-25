@@ -36,8 +36,17 @@ const features = [
 
 export default function ValueProps() {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="py-16 bg-white relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/2 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl opacity-50 mix-blend-multiply" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-brand-accent/5 rounded-full blur-3xl opacity-50 mix-blend-multiply" />
+      </div>
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="mb-16 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Ihre Vorteile</h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">Was Sie mit unseren Lösungen erreichen</p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <motion.div
@@ -46,7 +55,7 @@ export default function ValueProps() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative p-8 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 overflow-hidden">
+              className="group relative p-8 bg-white/70 backdrop-blur-md rounded-2xl shadow-sm hover:shadow-xl hover:shadow-brand-primary/10 transition-all border border-slate-200/50 overflow-hidden hover:border-brand-primary/30 hover:-translate-y-1">
               {/* Top accent border */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-primary to-brand-accent" />
 
