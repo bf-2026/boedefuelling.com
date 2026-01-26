@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Hero from "./sections/Hero";
 import SolutionsIntro from "./sections/SolutionsIntro";
-import CloudServices from "./sections/CloudServices";
 import AIServicesSection from "./sections/AIServicesSection";
 import EnterpriseAISection from "./sections/EnterpriseAISection";
 import ProcessPipeline from "./sections/ProcessPipeline";
@@ -20,7 +19,6 @@ import Topseller from "./sections/Topseller";
 import ServicesPage from "./sections/pages/Services";
 import IndustriesPage from "./sections/pages/Industries";
 import CasesPage from "./sections/pages/Cases";
-import InsightsPage from "./sections/pages/Insights";
 import CompanyPage from "./sections/pages/Company";
 import CareersPage from "./sections/pages/Careers";
 import TrainingsPage from "./sections/pages/Trainings";
@@ -87,15 +85,6 @@ function App() {
           element={
             <Layout>
               <CasesPage />
-              <Footer />
-            </Layout>
-          }
-        />
-        <Route
-          path="/insights"
-          element={
-            <Layout>
-              <InsightsPage />
               <Footer />
             </Layout>
           }

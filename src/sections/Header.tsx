@@ -25,6 +25,11 @@ export default function Header() {
     { label: "Enterprise Knowledge KI", href: "/services/enterprise-knowledge-ai" },
   ];
 
+  const trainings = [
+    { label: "KI Workshops", href: "/trainings#ki-workshops" },
+    { label: "Cloud Workshops", href: "/trainings#cloud-workshops" },
+  ];
+
 
   const navItems = [
     { label: "Dienstleistungen", href: "/services", hasDropdown: true },
