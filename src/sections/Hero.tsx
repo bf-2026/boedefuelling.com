@@ -34,7 +34,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="mb-6 inline-block">
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-brand-primary/10 border border-brand-primary/30 rounded-full text-sm font-medium text-brand-primary">
-            Für Unternehmen, die KI richtig nutzen
+            Für mittelständische Unternehmen aus der Industrie
           </span>
         </motion.div>
 

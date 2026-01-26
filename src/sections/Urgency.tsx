@@ -16,7 +16,7 @@ export default function Urgency() {
             <li>
               Ihre Wettbewerber investieren bereits in produktive KI-Systeme
             </li>
-            <li>Wissensverluste und Ineffizienzen nehmen zu</li>
+            <li>Wissensverluste durch ausscheidende Mitarbeiter</li>
             <li>Integrationsaufwand und Kosten steigen mit jedem Jahr</li>
             <li>Frühstarter sichern sich dauerhafte Kostenvorteile</li>
             <li>
