@@ -19,6 +19,9 @@ import InsightsPage from "./sections/pages/Insights";
 import CompanyPage from "./sections/pages/Company";
 import CareersPage from "./sections/pages/Careers";
 import TrainingsPage from "./sections/pages/Trainings";
+import CloudServicesAutomationPage from "./sections/pages/CloudServicesAutomation";
+import KIDatenanalysePage from "./sections/pages/KIDatenanalyse";
+import EnterpriseAIWorkflowPage from "./sections/pages/EnterpriseAIWorkflow";
 
 function HomePage() {
   return (
@@ -113,6 +116,42 @@ function App() {
           element={
             <Layout>
               <CareersPage />
+              <Footer />
+            </Layout>
+          }
+        />
+        <Route
+          path="/services/cloud-services-automation"
+          element={
+            <Layout>
+              <CloudServicesAutomationPage />
+              <Footer />
+            </Layout>
+          }
+        />
+        <Route
+          path="/services/ki-datenanalyse"
+          element={
+            <Layout>
+              <KIDatenanalysePage />
+              <Footer />
+            </Layout>
+          }
+        />
+        <Route
+          path="/services/ai-data-analytics"
+          element={
+            <Layout>
+              <KIDatenanalysePage />
+              <Footer />
+            </Layout>
+          }
+        />
+        <Route
+          path="/services/enterprise-ai-workflow"
+          element={
+            <Layout>
+              <EnterpriseAIWorkflowPage />
               <Footer />
             </Layout>
           }

@@ -24,12 +24,12 @@ export default function Header() {
     de: [
       { label: "Cloud Services & Automation", href: "/services/cloud-services-automation" },
       { label: "KI & Datenanalyse", href: "/services/ki-datenanalyse" },
-      { label: "Enterprise AI Workflow System", href: "/#enterprise-ai-workflow" },
+      { label: "Enterprise AI Workflow System", href: "/services/enterprise-ai-workflow" },
     ],
     en: [
       { label: "Cloud Services & Automation", href: "/services/cloud-services-automation" },
       { label: "AI & Data Analytics", href: "/services/ai-data-analytics" },
-      { label: "Enterprise AI Workflow System", href: "/#enterprise-ai-workflow" },
+      { label: "Enterprise AI Workflow System", href: "/services/enterprise-ai-workflow" },
     ],
   };
 
@@ -90,25 +90,48 @@ export default function Header() {
             <div key={item.href} className="relative group">
               {item.hasDropdown ? (
                 <>
-                  <button
-                    onMouseEnter={() => {
-                      if (dropdownTimeout) clearTimeout(dropdownTimeout);
-                      setOpenDropdown(item.label);
-                    }}
-                    onMouseLeave={() => {
-                      const timeout = setTimeout(() => setOpenDropdown(null), 200);
-                      setDropdownTimeout(timeout);
-                    }}
-                    className="flex items-center gap-1 text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">
-                    {item.label}
-                    <ChevronDown
-                      size={16}
-                      className={cn(
-                        "transition-transform duration-300",
-                        openDropdown === item.label && "rotate-180"
-                      )}
-                    />
-                  </button>
+                  {(item.label === "Dienstleistungen" || item.label === "Services") ? (
+                    <button
+                      onMouseEnter={() => {
+                        if (dropdownTimeout) clearTimeout(dropdownTimeout);
+                        setOpenDropdown(item.label);
+                      }}
+                      onMouseLeave={() => {
+                        const timeout = setTimeout(() => setOpenDropdown(null), 200);
+                        setDropdownTimeout(timeout);
+                      }}
+                      className="flex items-center gap-1 text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">
+                      {item.label}
+                      <ChevronDown
+                        size={16}
+                        className={cn(
+                          "transition-transform duration-300",
+                          openDropdown === item.label && "rotate-180"
+                        )}
+                      />
+                    </button>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      onMouseEnter={() => {
+                        if (dropdownTimeout) clearTimeout(dropdownTimeout);
+                        setOpenDropdown(item.label);
+                      }}
+                      onMouseLeave={() => {
+                        const timeout = setTimeout(() => setOpenDropdown(null), 200);
+                        setDropdownTimeout(timeout);
+                      }}
+                      className="flex items-center gap-1 text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">
+                      {item.label}
+                      <ChevronDown
+                        size={16}
+                        className={cn(
+                          "transition-transform duration-300",
+                          openDropdown === item.label && "rotate-180"
+                        )}
+                      />
+                    </Link>
+                  )}
 
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}

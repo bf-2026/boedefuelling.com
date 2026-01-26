@@ -1,8 +1,31 @@
 import { motion } from "framer-motion";
 import { BookOpen, Users, Zap, Award, Brain, Cloud, Lock, TrendingUp, Cpu, Code } from "lucide-react";
 import { Button } from "../../components/ui/Button";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function TrainingsPage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Scroll to hash element when page loads or hash changes
+    if (location.hash) {
+      setTimeout(() => {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          const headerOffset = 100; // Adjust for fixed header
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    }
+  }, [location]);
+
   const trainings = [
     {
       icon: BookOpen,
@@ -169,7 +192,7 @@ export default function TrainingsPage() {
       </section>
 
       {/* Trainings Grid */}
-      <section className="py-32 px-4 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden">
+      <section id="ki-programme" className="py-32 px-4 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl opacity-50 mix-blend-multiply" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-accent/10 rounded-full blur-3xl opacity-50 mix-blend-multiply" />
