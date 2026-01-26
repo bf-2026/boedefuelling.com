@@ -1,40 +1,51 @@
 # Boedefuelling.com
 
-This website uses
+This website uses:
 
 - React
 - TypeScript
 - Vite
 - TailwindCSS
+- Framer Motion
+- React Router
+- Lucide React
 
-## Getting started
+## Project Structure
 
-### Download an IDE
+- `src/components`: Reusable UI components
+- `src/sections`: Page sections and layout blocks
+- `src/lib`: Utility functions and shared logic
 
-I recommend using [Visual Studio Code](https://code.visualstudio.com/) or Antigravity (https://antigravity.app/). I have both!
+## Getting Started
 
-### Clone the repo
+### Prerequisites
+
+- [Node.js](https://nodejs.org/en)
+- [Git](https://git-scm.com/)
+
+### Installation
 
 ```bash
 git clone https://github.com/bf-2026/boedefuelling.com.git
-```
-
-install dependencies
-
-```bash
+cd boedefuelling.com
 npm install
 ```
 
-and run
+### Available Scripts
 
-```bash
-npm run dev
-```
+- `npm run dev`: Start the development server
+- `npm run build`: Build the project for production
+- `npm run preview`: Preview the production build locally
+- `npm run lint`: Run ESLint to check for code quality issues
 
-the website is now live under http://localhost:5173/
+## Deployment
 
-## Cloudflare pages
+The website is hosted on Cloudflare Pages. It automatically builds and deploys (via `npm run build`) whenever a commit is pushed to the repository.
 
-The website is hosted with cloudflare pages. Login to cloudflare. Under Compute & AI click workers & pages.
+## Development Workflow
 
-When a new commit is pushed to github, cloudflare automatically runs `npm run build` to serve the updated website.
+1. **Create a branch**: `git checkout -b <branch-name>`
+2. **Make changes** and save.
+3. **Stage changes**: `git add .`
+4. **Commit**: `git commit -m "description of changes"`
+5. **Push**: `git push -u origin <branch-name>`

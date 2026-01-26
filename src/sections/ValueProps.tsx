@@ -28,9 +28,9 @@ const features = [
   },
   {
     icon: ShieldCheck,
-    title: "Datensouveränität",
+    title: "Datensicherheit",
     description:
-      "Volle Datenhoheit, Compliance und Sicherheit für ihre sensiblen Unternehmensinformationen.",
+      "Compliance und Sicherheit für ihre sensiblen Unternehmensinformationen.",
   },
 ];
 

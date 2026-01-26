@@ -175,12 +175,7 @@ const AIWorkflow = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-          
-          <div className="bg-white/70 backdrop-blur-md rounded-2xl p-8 border border-slate-200/50 text-center hover:shadow-lg transition-shadow">
-            <div className="text-3xl font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent mb-2">100%</div>
-            <p className="text-slate-600 text-sm">Datenhoheit</p>
-          </div>
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
 
           <div className="bg-white/70 backdrop-blur-md rounded-2xl p-8 border border-slate-200/50 text-center hover:shadow-lg transition-shadow">
             <div className="text-3xl font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent mb-2">End-to-End</div>

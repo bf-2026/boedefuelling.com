@@ -21,7 +21,7 @@ const problemsSolutions = [
   {
     problem: "Fehleranfällige Buchhaltung",
     problemDetail: "Manuelle PDF-Bearbeitung kostet Zeit und führt zu Fehlern.",
-    solution: "Intelligente KI-Agent Bearbeitung mit Kontroller-OK",
+    solution: "Intelligente KI-Agent Bearbeitung mit Human-in-the-Loop",
     solutionDetail: "Automatisierung mit menschlicher Sicherheit.",
     roi: "80% weniger Fehler",
   },

@@ -1,6 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Hero from "./sections/Hero";
+import SolutionsIntro from "./sections/SolutionsIntro";
+import CloudServices from "./sections/CloudServices";
+import AIServicesSection from "./sections/AIServicesSection";
+import EnterpriseAISection from "./sections/EnterpriseAISection";
+import ProcessPipeline from "./sections/ProcessPipeline";
 import ValueProps from "./sections/ValueProps";
 import Urgency from "./sections/Urgency";
 import Mission from "./sections/Mission";
@@ -25,6 +30,11 @@ function HomePage() {
     <Layout>
       <main>
         <Hero />
+        <SolutionsIntro />
+        {/*<CloudServices />*/}
+        <AIServicesSection />
+        <EnterpriseAISection />
+        <ProcessPipeline />
         <Topseller />
         <ValueProps />
         <Services />

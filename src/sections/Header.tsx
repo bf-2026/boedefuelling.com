@@ -8,7 +8,6 @@ import logo from "../assets/Logo-boedefuelling.png";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const [language, setLanguage] = useState<"de" | "en">("de");
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [dropdownTimeout, setDropdownTimeout] = useState<ReturnType<typeof setTimeout> | null>(null);
 
@@ -20,52 +19,21 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const services = {
-    de: [
-      { label: "Cloud Services & Automation", href: "/services/cloud-services-automation" },
-      { label: "KI & Datenanalyse", href: "/services/ki-datenanalyse" },
-      { label: "Enterprise AI Workflow System", href: "/#enterprise-ai-workflow" },
-    ],
-    en: [
-      { label: "Cloud Services & Automation", href: "/services/cloud-services-automation" },
-      { label: "AI & Data Analytics", href: "/services/ai-data-analytics" },
-      { label: "Enterprise AI Workflow System", href: "/#enterprise-ai-workflow" },
-    ],
-  };
+  const services = [
+    { label: "Automatisierung", href: "/services/automatisierung" },
+    { label: "KI & Datenanalyse", href: "/services/ki-datenanalyse" },
+    { label: "Enterprise Knowledge KI", href: "/services/enterprise-knowledge-ai" },
+  ];
 
-  const trainings = {
-    de: [
-      { label: "KI Training-Programme", href: "/trainings#ki-programme" },
-      { label: "KI Workshops & Spezialisierungen", href: "/trainings#ki-workshops" },
-      { label: "Cloud & Infrastructure Workshops", href: "/trainings#cloud-workshops" },
-    ],
-    en: [
-      { label: "AI Training Programs", href: "/trainings#ai-programmes" },
-      { label: "AI Workshops & Specializations", href: "/trainings#ai-workshops" },
-      { label: "Cloud & Infrastructure Workshops", href: "/trainings#cloud-workshops" },
-    ],
-  };
 
-  const navItems = {
-    de: [
-      { label: "Dienstleistungen", href: "/services", hasDropdown: true },
-      { label: "Branchen", href: "/industries" },
-      { label: "Fälle", href: "/cases" },
-      { label: "Einblicke", href: "/insights" },
-      { label: "Trainings", href: "/trainings", hasDropdown: true },
-      { label: "Unternehmen", href: "/company" },
-      { label: "Karriere", href: "/careers" },
-    ],
-    en: [
-      { label: "Services", href: "/services", hasDropdown: true },
-      { label: "Industries", href: "/industries" },
-      { label: "Cases", href: "/cases" },
-      { label: "Insights", href: "/insights" },
-      { label: "Trainings", href: "/trainings", hasDropdown: true },
-      { label: "Company", href: "/company" },
-      { label: "Careers", href: "/careers" },
-    ],
-  };
+  const navItems = [
+    { label: "Dienstleistungen", href: "/services", hasDropdown: true },
+    { label: "Branchen", href: "/industries" },
+    { label: "Fallstudien", href: "/cases" },
+    { label: "Trainings", href: "/trainings" },
+    { label: "Unternehmen", href: "/company" },
+    { label: "Karriere", href: "/careers" },
+  ];
 
   return (
     <motion.header
@@ -86,7 +54,7 @@ export default function Header() {
         </div>
 
         <nav className="hidden md:flex items-center gap-6">
-          {navItems[language].map((item) => (
+          {navItems.map((item) => (
             <div key={item.href} className="relative group">
               {item.hasDropdown ? (
                 <>
@@ -127,7 +95,7 @@ export default function Header() {
                       setDropdownTimeout(timeout);
                     }}
                     className="absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-md rounded-lg shadow-lg border border-slate-200/50 overflow-hidden">
-                    {(item.label === "Dienstleistungen" || item.label === "Services" ? services[language] : trainings[language]).map((service) => (
+                    {(item.label === "Dienstleistungen" ? services : trainings).map((service) => (
                       <Link
                         key={service.href}
                         to={service.href}
@@ -149,29 +117,6 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <div className="flex bg-slate-200 rounded-full p-1">
-            <button
-              onClick={() => setLanguage("de")}
-              className={cn(
-                "px-3 py-1 text-sm font-medium rounded-full transition-colors",
-                language === "de"
-                  ? "bg-white text-slate-900 shadow-sm"
-                  : "text-slate-700 hover:text-slate-900"
-              )}>
-              DE
-            </button>
-            <button
-              onClick={() => setLanguage("en")}
-              className={cn(
-                "px-3 py-1 text-sm font-medium rounded-full transition-colors",
-                language === "en"
-                  ? "bg-white text-slate-900 shadow-sm"
-                  : "text-slate-700 hover:text-slate-900"
-              )}>
-              EN
-            </button>
-          </div>
-
           <Button
             href="https://cal.com/lucas-fuelling-ytra7k/30min?overlayCalendar=true"
             variant="brand"
