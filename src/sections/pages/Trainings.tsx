@@ -181,7 +181,7 @@ export default function TrainingsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}>
             <Button
-              href="https://cal.com/lucas-fuelling-ytra7k/30min?overlayCalendar=true"
+              href="https://cal.com/lucas-fuelling-ytra7k/30min"
               variant="brand"
               size="lg"
               className="rounded-full text-base font-semibold px-8 shadow-xl shadow-brand-primary/20">
@@ -449,7 +449,7 @@ export default function TrainingsPage() {
             </p>
 
             <Button
-              href="https://cal.com/lucas-fuelling-ytra7k/30min?overlayCalendar=true"
+              href="https://cal.com/lucas-fuelling-ytra7k/30min"
               variant="brand"
               size="lg"
               className="rounded-full text-base font-semibold px-8 shadow-xl shadow-brand-primary/20">

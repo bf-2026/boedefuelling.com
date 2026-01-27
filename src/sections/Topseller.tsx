@@ -55,7 +55,7 @@ export default function Topseller() {
                   transition={{ duration: 0.6, delay: 0.25 }}
                   className="flex flex-wrap gap-4">
                   <Button
-                    href="https://cal.com/lucas-fuelling-ytra7k/30min?overlayCalendar=true"
+                    href="https://cal.com/lucas-fuelling-ytra7k/30min"
                     variant="brand"
                     size="lg"
                     className="rounded-full text-base font-semibold px-8 shadow-xl shadow-brand-primary/20">

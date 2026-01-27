@@ -51,7 +51,7 @@ const Button = React.forwardRef<
   ButtonProps
 >(({ className, variant, size, asChild = false, href, ...props }, ref) => {
   const Comp = href ? "a" : asChild ? Slot : "button";
-  const linkProps = href ? { href } : {};
+  const linkProps = href ? { href, rel: "noopener noreferrer" } : {};
 
   // Filter out button-specific props when rendering as anchor
   const filteredProps = href

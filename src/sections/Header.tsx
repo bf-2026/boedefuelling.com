@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "../components/ui/Button";
 import { cn } from "../lib/utils";
-import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, Menu, X } from "lucide-react";
 import logo from "../assets/Logo-boedefuelling.png";
 
 export default function Header() {
@@ -11,6 +11,8 @@ export default function Header() {
   const [language, setLanguage] = useState<"de" | "en">("de");
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [dropdownTimeout, setDropdownTimeout] = useState<ReturnType<typeof setTimeout> | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +21,29 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+    };
+  }, [mobileMenuOpen]);
 
   const services = {
     de: [
@@ -85,7 +110,8 @@ export default function Header() {
           </Link>
         </div>
 
-        <nav className="hidden md:flex items-center gap-6">
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-6">
           {navItems[language].map((item) => (
             <div key={item.href} className="relative group">
               {item.hasDropdown ? (
@@ -100,7 +126,12 @@ export default function Header() {
                         const timeout = setTimeout(() => setOpenDropdown(null), 200);
                         setDropdownTimeout(timeout);
                       }}
-                      className="flex items-center gap-1 text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">
+                      className={cn(
+                        "flex items-center gap-1 text-sm font-medium transition-colors relative",
+                        location.pathname.startsWith('/services')
+                          ? "text-brand-primary font-semibold after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-0.5 after:bg-brand-primary after:rounded-full"
+                          : "text-slate-700 hover:text-slate-900"
+                      )}>
                       {item.label}
                       <ChevronDown
                         size={16}
@@ -121,7 +152,12 @@ export default function Header() {
                         const timeout = setTimeout(() => setOpenDropdown(null), 200);
                         setDropdownTimeout(timeout);
                       }}
-                      className="flex items-center gap-1 text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">
+                      className={cn(
+                        "flex items-center gap-1 text-sm font-medium transition-colors relative",
+                        location.pathname.startsWith('/trainings')
+                          ? "text-brand-primary font-semibold after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-0.5 after:bg-brand-primary after:rounded-full"
+                          : "text-slate-700 hover:text-slate-900"
+                      )}>
                       {item.label}
                       <ChevronDown
                         size={16}
@@ -163,7 +199,12 @@ export default function Header() {
               ) : (
                 <Link
                   to={item.href}
-                  className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">
+                  className={cn(
+                    "text-sm font-medium transition-colors relative",
+                    location.pathname === item.href
+                      ? "text-brand-primary font-semibold after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-0.5 after:bg-brand-primary after:rounded-full"
+                      : "text-slate-700 hover:text-slate-900"
+                  )}>
                   {item.label}
                 </Link>
               )}
@@ -171,7 +212,8 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        {/* Desktop Actions */}
+        <div className="hidden lg:flex items-center gap-4">
           <div className="flex bg-slate-200 rounded-full p-1">
             <button
               onClick={() => setLanguage("de")}
@@ -196,13 +238,137 @@ export default function Header() {
           </div>
 
           <Button
-            href="https://cal.com/lucas-fuelling-ytra7k/30min?overlayCalendar=true"
+            href="https://cal.com/lucas-fuelling-ytra7k/30min"
             variant="brand"
             className="rounded-full shadow-brand-primary/20">
             Kontakt aufnehmen
           </Button>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all duration-200"
+          aria-label="Toggle menu">
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="fixed inset-0 bg-slate-50 z-50 lg:hidden overflow-hidden">
+            <div className="relative h-full flex flex-col px-6 py-6 overflow-y-auto overscroll-contain touch-auto">
+              {/* Header with Logo and Close Button */}
+              <div className="flex items-center justify-between mb-8">
+                <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+                  <img src={logo} alt="Boedefuelling Logo" className="h-10" />
+                </Link>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 hover:bg-brand-primary hover:text-white transition-all duration-200"
+                  aria-label="Close menu">
+                  <X size={22} />
+                </button>
+              </div>
+              
+              <div className="flex-1 flex flex-col justify-between">
+              <div className="space-y-3">
+              {navItems[language].map((item) => (
+                <div key={item.href}>
+                  {item.hasDropdown ? (
+                    <div>
+                      <button
+                        onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                        className="flex items-center justify-between w-full text-base font-semibold text-slate-800 py-3 px-3 rounded-lg hover:bg-slate-100 transition-all duration-200">
+                        {item.label}
+                        <ChevronDown
+                          size={18}
+                          className={cn(
+                            "transition-transform duration-300 text-brand-primary",
+                            openDropdown === item.label && "rotate-180"
+                          )}
+                        />
+                      </button>
+                      <AnimatePresence>
+                        {openDropdown === item.label && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="overflow-hidden">
+                            <div className="pl-6 pr-3 space-y-1 mt-2 mb-2">
+                              {(item.label === "Dienstleistungen" || item.label === "Services"
+                                ? services[language]
+                                : trainings[language]
+                              ).map((subItem) => (
+                                <Link
+                                  key={subItem.href}
+                                  to={subItem.href}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="block text-sm text-slate-600 hover:text-brand-primary hover:bg-brand-primary/5 py-2.5 px-3 rounded-md transition-all duration-200">
+                                  {subItem.label}
+                                </Link>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block text-base font-semibold text-slate-800 hover:text-brand-primary hover:bg-slate-100 py-3 px-3 rounded-lg transition-all duration-200">
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
+              ))}
+              </div>
+
+              <div className="space-y-4 pt-2 pb-16">
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setLanguage("de")}
+                  className={cn(
+                    "flex-1 px-4 py-2.5 text-sm font-semibold rounded-full transition-all duration-200",
+                    language === "de"
+                      ? "bg-brand-primary text-white shadow-lg shadow-brand-primary/30"
+                      : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                  )}>
+                  DE
+                </button>
+                <button
+                  onClick={() => setLanguage("en")}
+                  className={cn(
+                    "flex-1 px-4 py-2.5 text-sm font-semibold rounded-full transition-all duration-200",
+                    language === "en"
+                      ? "bg-brand-primary text-white shadow-lg shadow-brand-primary/30"
+                      : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                  )}>
+                  EN
+                </button>
+              </div>
+
+              <Button
+                href="https://cal.com/lucas-fuelling-ytra7k/30min"
+                variant="brand"
+                className="w-full rounded-full shadow-lg shadow-brand-primary/30 mt-4">
+                Kontakt aufnehmen
+              </Button>
+              </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

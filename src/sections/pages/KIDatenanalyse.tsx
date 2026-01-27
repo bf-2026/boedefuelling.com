@@ -1,379 +1,904 @@
 import { motion } from "framer-motion";
-import { Brain, BarChart3, Sparkles, Cpu, Database, LineChart, CheckCircle, Lightbulb, Award, FileSearch, Shield, Layers, MessageSquare, Phone, Eye, Clock, Server, Wrench, ArrowRight, Target, TrendingUp, Zap } from "lucide-react";
+import { Brain, BarChart3, Sparkles, Cpu, Database, LineChart, CheckCircle, Lightbulb, Award, FileSearch, Shield, Layers, MessageSquare, Phone, Eye, Clock, Server, Wrench, X, Users, ArrowRight, Target } from "lucide-react";
 import { Button } from "../../components/ui/Button";
+import { useState } from "react";
 
 export default function KIDatenanalysePage() {
-  const solutions = [
+  const [selectedOffering, setSelectedOffering] = useState<any>(null);
+  const serviceCategories = [
     {
-      category: "KI-Strategie & Consulting",
-      icon: Lightbulb,
-      gradient: "from-blue-600 via-blue-500 to-cyan-400",
-      offerings: [
+      phase: "01",
+      title: "Strategische KI-Planung",
+      subtitle: "Zukunftsstrategien für Ihre Daten- und KI-Landschaft",
+      color: "from-blue-500/10 to-blue-600/5",
+      services: [
         {
+          icon: Lightbulb,
           title: "Data & AI Journey Workshop",
-          description: "Entwickeln Sie fundierte Zukunftsstrategien für Ihre Daten- und KI-Landschaft",
-          price: "2.000€",
-          duration: "2 Tage",
-          deliverables: ["Strategische Planung", "Use Case Identifikation", "Roadmap Development", "Stakeholder Alignment"]
+          description: "Entwickeln Sie fundierte Zukunftsstrategien für Ihre Daten- und KI-Landschaft mit unserem strukturierten Workshop.",
+          price: "ab 2.000€",
+          features: ["Strategische Planung", "Use Case Identifikation", "Roadmap Development", "Stakeholder Alignment"],
+          details: {
+            overview: "Unser Data & AI Journey Workshop ist der perfekte Einstieg in die KI-Transformation. In einem strukturierten 2-tägigen Format entwickeln wir gemeinsam mit Ihren Stakeholdern eine fundierte Strategie für Ihre Daten- und KI-Landschaft, identifizieren konkrete Use Cases und priorisieren Quick Wins.",
+            whatYouGet: [
+              "Strukturierter Workshop mit Ihren Fach- und IT-Stakeholdern (2 Tage vor Ort oder remote)",
+              "IST-Analyse Ihrer aktuellen Daten- und KI-Landschaft mit Gap-Identifikation",
+              "Use Case Katalog mit über 20 branchenspezifischen KI-Anwendungsfällen",
+              "Priorisierte Roadmap mit Quick Wins, kurzfristigen und langfristigen Projekten",
+              "ROI-Abschätzung für identifizierte Use Cases mit Business-Value-Quantifizierung",
+              "Technologie-Empfehlungen und Architektur-Skizze für Ihre KI-Plattform"
+            ],
+            process: [
+              "Vorbereitung: Stakeholder-Interviews und Dokumenten-Review Ihrer IT-Landschaft",
+              "Workshop Tag 1: Vision Development, Use Case Ideation und Business Value Assessment",
+              "Workshop Tag 2: Technology Deep-Dive, Roadmap Development und Prioritization",
+              "Follow-up: Dokumentation, Executive Summary und nächste Schritte"
+            ],
+            idealFor: "Unternehmen (50-500 Mitarbeiter), die ihre KI-Journey strukturiert starten und konkrete Use Cases mit Business Value identifizieren möchten."
+          }
         },
         {
-          title: "AI Readiness Assessment",
-          description: "Umfassende Analyse zur optimalen KI-Implementierung in Ihrem Unternehmen",
-          price: "2.000€",
-          duration: "1 Woche",
-          deliverables: ["Reifegradanalyse", "Gap Analysis", "Quick Wins", "Implementierungsplan"]
-        },
-        {
+          icon: Brain,
           title: "Azure KI Architektur Workshop",
-          description: "Azure KI-Dienste effektiv für Ihre Unternehmensprozesse einsetzen",
-          price: "3.000€",
-          duration: "3 Tage",
-          deliverables: ["Azure AI Services Overview", "Architektur-Design", "Best Practices", "Hands-on Labs"]
+          description: "Lernen Sie, wie Sie Azure KI-Dienste effektiv für Ihre Unternehmensprozesse einsetzen und skalieren.",
+          price: "ab 3.000€",
+          features: ["Azure AI Services Overview", "Architektur-Design", "Best Practices", "Hands-on Labs"],
+          details: {
+            overview: "Azure bietet ein umfassendes Portfolio an KI-Services – von Azure OpenAI über Cognitive Services bis hin zu Machine Learning. In diesem 2-tägigen Workshop lernen Sie, wie Sie diese Services optimal für Ihre Unternehmensprozesse einsetzen, skalieren und mit bestehenden Systemen integrieren.",
+            whatYouGet: [
+              "Umfassende Übersicht über Azure AI Services: OpenAI, Cognitive Services, Machine Learning und AI Search",
+              "Architektur-Design für Ihre spezifischen Use Cases mit Referenz-Architekturen",
+              "Best Practices für Sicherheit, Skalierung und Cost Optimization in Azure AI",
+              "Hands-on Labs mit Azure OpenAI, Document Intelligence und Cognitive Search",
+              "Proof of Concept Implementierung eines Ihrer Use Cases während des Workshops",
+              "Architecture Decision Records (ADRs) und Dokumentation für Ihr Team"
+            ],
+            process: [
+              "Tag 1 Vormittag: Azure AI Services Overview und Use Case Diskussion",
+              "Tag 1 Nachmittag: Architektur-Design und Hands-on Lab Azure OpenAI",
+              "Tag 2 Vormittag: Advanced Topics (RAG, Agents, Fine-Tuning) und PoC Development",
+              "Tag 2 Nachmittag: Security, Compliance, MLOps und Next Steps"
+            ],
+            idealFor: "Entwicklungsteams und Architekten, die Azure KI-Services evaluieren und produktionsreife KI-Lösungen auf Azure implementieren möchten."
+          }
+        },
+        {
+          icon: Award,
+          title: "AI Readiness Assessment",
+          description: "Umfassende Analyse zur optimalen und effizienten Implementierung von KI in Ihrem Unternehmen.",
+          price: "ab 2.000€",
+          features: ["Reifegradanalyse", "Gap Analysis", "Quick Wins", "Implementierungsplan"],
+          details: {
+            overview: "Bevor Sie in KI investieren, sollten Sie wissen, wo Sie stehen. Unser AI Readiness Assessment analysiert Ihre Dateninfrastruktur, Prozesse, Skills und Organisation, identifiziert Lücken und zeigt konkrete Schritte zur erfolgreichen KI-Implementierung auf.",
+            whatYouGet: [
+              "Detaillierte Reifegradanalyse nach AI Maturity Model (5 Dimensionen: Data, Technology, Skills, Process, Culture)",
+              "Gap Analysis mit konkreten Handlungsempfehlungen pro Dimension",
+              "Quick Win Identifikation: Use Cases mit hohem ROI und niedriger Komplexität",
+              "Risiko-Assessment: Technische, organisatorische und rechtliche Risiken",
+              "Detaillierter Implementierungsplan mit Zeitplan, Budget und Required Skills",
+              "Executive Summary für C-Level mit Business Case und Investment Roadmap"
+            ],
+            process: [
+              "Discovery Phase (1 Woche): Stakeholder Interviews, Dokumenten-Review und System-Analyse",
+              "Assessment Phase (1 Woche): Tiefenanalyse Ihrer Daten, Infrastruktur und Prozesse",
+              "Workshop (1 Tag): Präsentation der Ergebnisse und gemeinsame Priorisierung",
+              "Delivery: Finaler Report mit Roadmap und nächsten Schritten"
+            ],
+            idealFor: "Unternehmen, die vor KI-Investitionen ihre Ausgangssituation verstehen, Risiken minimieren und einen strukturierten Implementierungsplan entwickeln möchten."
+          }
+        },
+        {
+          icon: Sparkles,
+          title: "Forschungszulage für KI-Projekte",
+          description: "Innovative KI-Lösungen entwickeln und dabei staatliche Förderungen optimal nutzen.",
+          price: "ab 150.000€",
+          features: ["Förderantrag", "Dokumentation", "Projektbegleitung", "Compliance-Sicherung"],
+          details: {
+            overview: "KI-Projekte mit Innovationscharakter können bis zu 25% der Entwicklungskosten über die Forschungszulage zurückerhalten. Wir begleiten Sie von der Antragsstellung bis zum Verwendungsnachweis und sichern die förderfähige Dokumentation während des gesamten Projekts.",
+            whatYouGet: [
+              "Förderfähigkeits-Check: Prüfung Ihres KI-Projekts auf Innovationscharakter und technische Unsicherheit",
+              "Förderantrag-Erstellung mit technischer Dokumentation und Begründung nach FZulG",
+              "Projektbegleitende Dokumentation über die gesamte Laufzeit (typisch 12-36 Monate)",
+              "Stundenzettel-System und Zeiterfassung für förderfähige FuE-Tätigkeiten",
+              "Verwendungsnachweis-Erstellung für die Bescheinigungsstelle mit vollständiger Dokumentation",
+              "Compliance-Sicherung: Rechtssichere Abwicklung nach Forschungszulagengesetz (FZulG)"
+            ],
+            process: [
+              "Phase 1: Förderfähigkeits-Assessment und Antragsstellung (2-4 Wochen)",
+              "Phase 2: Projektdurchführung mit laufender Dokumentation (12-36 Monate)",
+              "Phase 3: Verwendungsnachweis und Einreichung bei Bescheinigungsstelle (4-8 Wochen)",
+              "Phase 4: Auszahlung durch Finanzamt nach positiver Bescheinigung"
+            ],
+            idealFor: "Unternehmen mit innovativen KI-Projekten (z.B. Custom ML Models, Computer Vision, NLP), die 25% der Entwicklungskosten (max. 1 Mio€/Jahr) zurückerhalten möchten."
+          }
         }
       ]
     },
     {
-      category: "KI-Plattformen & Infrastruktur",
-      icon: Database,
-      gradient: "from-purple-600 via-purple-500 to-pink-400",
-      offerings: [
+      phase: "02",
+      title: "KI-Fundament & Infrastruktur",
+      subtitle: "Solide Basis für skalierbare KI-Anwendungen schaffen",
+      color: "from-purple-500/10 to-purple-600/5",
+      services: [
         {
-          title: "6-Wochen GenAI Pilotprojekt",
-          description: "Strukturiertes Pilotprojekt zur Validierung generativer KI in Ihrem Unternehmen",
-          price: "30.000€",
-          duration: "6 Wochen",
-          deliverables: ["Use Case Validation", "Prototyping", "ROI Evaluation", "Go/No-Go Decision"]
+          icon: Database,
+          title: "Azure OpenAI Enterprise Setup",
+          description: "Production-ready Azure OpenAI Infrastruktur mit Enterprise Security, Governance und Kostenoptimierung.",
+          price: "ab 48.000€",
+          features: ["Enterprise Deployment", "Security Config", "Cost Management", "Monitoring Setup"],
+          details: {
+            overview: "Azure OpenAI ist die Basis für Enterprise GenAI-Anwendungen. Wir implementieren eine production-ready Infrastruktur mit Multi-Tenant-Architektur, umfassender Security, Kostenoptimierung und Monitoring – bereit für hunderte Benutzer und Millionen von Anfragen.",
+            whatYouGet: [
+              "Multi-Region Azure OpenAI Deployment mit Load Balancing für High Availability",
+              "Enterprise Security: Private Endpoints, Managed Identity, Azure Key Vault Integration",
+              "Token Tracking und Cost Management mit Budget Alerts und Quota Monitoring",
+              "Content Filtering und Responsible AI: Safety-Checks für Inputs und Outputs",
+              "Prompt Management System für versionierte Prompts und A/B Testing",
+              "Observability Stack: Application Insights, Logging und Performance Dashboards"
+            ],
+            process: [
+              "Woche 1-2: Architecture Design, Azure Resource Provisioning und Network Setup",
+              "Woche 3-4: Security Hardening, Content Filtering und Identity Management",
+              "Woche 5-6: Monitoring Setup, Cost Management und Performance Testing",
+              "Woche 7-8: Team Training, Documentation und Go-Live"
+            ],
+            idealFor: "Unternehmen, die Azure OpenAI für produktive GenAI-Anwendungen einsetzen und eine sichere, skalierbare und kosteneffiziente Infrastruktur benötigen."
+          }
         },
         {
-          title: "Vektordatenbank für RAG & Search",
-          description: "Moderne Vektordatenbanken für effiziente KI-Suche und RAG-Architekturen",
-          price: "48.000€",
-          duration: "6-8 Wochen",
-          deliverables: ["Vector DB Setup", "RAG Implementation", "Hybrid Search", "Performance Tuning"]
+          icon: BarChart3,
+          title: "Daten-Pipeline & ETL Engineering",
+          description: "Robuste, skalierbare ETL-Pipelines für automatisierte Datenverarbeitung und KI-ready Data Preparation.",
+          price: "ab 50.000€",
+          features: ["Pipeline Development", "Data Quality", "Automation", "Monitoring"],
+          details: {
+            overview: "Hochwertige KI-Modelle brauchen hochwertige Daten. Wir entwickeln production-ready ETL-Pipelines, die Ihre Rohdaten aus multiplen Quellen automatisiert extrahieren, transformieren, validieren und für KI-Anwendungen bereitstellen.",
+            whatYouGet: [
+              "End-to-End ETL-Pipelines mit Azure Data Factory, Databricks oder Apache Airflow",
+              "Multi-Source Integration: Datenbanken, APIs, Files, Cloud Storage und SaaS-Systeme",
+              "Data Quality Framework: Automated Validation, Deduplication und Anomaly Detection",
+              "Incremental Loading Patterns für effiziente, kostenoptimierte Daten-Updates",
+              "Data Lineage Tracking: Vollständige Nachverfolgbarkeit von Quelle bis Ziel",
+              "Pipeline Monitoring mit Alerts, Error Handling und automatischen Retries"
+            ],
+            process: [
+              "Woche 1-2: Data Source Assessment und Pipeline Architecture Design",
+              "Woche 3-6: Pipeline Development, Testing und Data Quality Implementation",
+              "Woche 7-8: Performance Optimization, Monitoring Setup und Documentation",
+              "Woche 9-10: Team Training und Handover mit Operations Runbooks"
+            ],
+            idealFor: "Unternehmen mit multiplen Datenquellen, die automatisierte, zuverlässige Datenverarbeitung für Analytics und KI benötigen."
+          }
         },
         {
-          title: "Azure AI Platform Setup",
-          description: "Production-ready KI-Infrastruktur auf Azure mit MLOps und Governance",
-          price: "35.000€",
-          duration: "4-6 Wochen",
-          deliverables: ["Azure AI Setup", "MLOps Pipeline", "Model Registry", "Monitoring Stack"]
+          icon: MessageSquare,
+          title: "Data Lake & Analytics Platform",
+          description: "Skalierbare Data Lake Architektur als Foundation für Advanced Analytics und KI-Anwendungen.",
+          price: "ab 30.000€",
+          features: ["Data Lake Setup", "Lakehouse Architecture", "Governance", "Analytics Ready"],
+          details: {
+            overview: "Ein moderner Data Lake ist die Basis für skalierbare KI- und Analytics-Projekte. Wir implementieren eine Lakehouse-Architektur mit Bronze-Silver-Gold-Pattern, die strukturierte, semi-strukturierte und unstrukturierte Daten vereint und für KI-Workloads optimiert ist.",
+            whatYouGet: [
+              "Lakehouse Architecture auf Azure (ADLS Gen2 + Databricks) oder AWS (S3 + EMR)",
+              "Bronze-Silver-Gold Layering für optimale Data Quality und Performance",
+              "Data Catalog mit automatischer Metadata Discovery und Lineage Tracking",
+              "Access Control Framework mit Row-Level und Column-Level Security",
+              "Cost Optimization: Storage Tiering, Lifecycle Policies und Compression",
+              "Analytics-Ready: Integration mit Power BI, Azure ML und Spark-Workloads"
+            ],
+            process: [
+              "Woche 1-2: Requirements Analysis und Architecture Design",
+              "Woche 3-4: Data Lake Provisioning, Security Setup und Network Configuration",
+              "Woche 5-6: Data Ingestion Pipelines und Layer Implementation",
+              "Woche 7-8: Data Catalog, Governance und Team Training"
+            ],
+            idealFor: "Unternehmen mit großen Datenmengen (TB-PB), multiplen Datenquellen und Advanced Analytics/KI-Vorhaben, die eine zukunftssichere Datenplattform benötigen."
+          }
+        },
+
+      ]
+    },
+    {
+      phase: "03",
+      title: "KI-Modelle & Entwicklung",
+      subtitle: "Custom ML-Modelle und spezialisierte KI-Lösungen",
+      color: "from-orange-500/10 to-orange-600/5",
+      services: [
+        {
+          icon: Brain,
+          title: "Custom LLM Fine-Tuning",
+          description: "Anpassung von Large Language Models auf Ihre spezifischen Unternehmensdaten und Use Cases.",
+          price: "ab 45.000€",
+          features: ["Model Selection", "Training Data Prep", "Fine-Tuning Pipeline", "Evaluation & Optimization"],
+          details: {
+            overview: "Standard-LLMs sind beeindruckend, aber für domänenspezifische Aufgaben oft nicht optimal. Wir fine-tunen GPT-4, Llama, oder Mistral-Modelle auf Ihre Unternehmensdaten und Use Cases für signifikant bessere Ergebnisse bei spezialisierten Aufgaben.",
+            whatYouGet: [
+              "Use Case Assessment und Model Selection (GPT-4, Llama 3, Mistral, oder Custom Base Model)",
+              "Training Data Engineering: Data Collection, Cleaning, Annotation und Augmentation",
+              "Fine-Tuning Pipeline auf Azure ML oder AWS SageMaker mit MLOps Best Practices",
+              "Hyperparameter Optimization und Model Evaluation mit domänenspezifischen Metriken",
+              "A/B Testing Framework für Vergleich zwischen Base Model und Fine-Tuned Model",
+              "Production Deployment mit Monitoring, Feedback Loop und Continuous Improvement"
+            ],
+            process: [
+              "Woche 1-2: Use Case Definition, Model Selection und Training Data Assessment",
+              "Woche 3-6: Data Preparation, Annotation und Training Data Quality Assurance",
+              "Woche 7-10: Fine-Tuning Experiments, Hyperparameter Tuning und Evaluation",
+              "Woche 11-12: Production Deployment, Monitoring Setup und Team Training"
+            ],
+            idealFor: "Unternehmen mit spezialisierten Domänen (Legal, Medical, Finance, Engineering), die LLM-Performance für ihre Use Cases optimieren möchten."
+          }
         },
         {
-          title: "Private AI Infrastruktur",
-          description: "On-Premise KI-Infrastruktur mit GPU-Servern für maximale Datensicherheit",
-          price: "75.000€",
-          duration: "8-10 Wochen",
-          deliverables: ["Hardware Setup", "GPU Cluster", "Model Deployment", "Security Framework"]
+          icon: Eye,
+          title: "Computer Vision Lösungen",
+          description: "Produktionsreife Computer Vision Systeme für Qualitätskontrolle, Objekterkennung und Bildanalyse.",
+          price: "ab 45.000€",
+          features: ["Custom Vision Models", "Real-time Processing", "Edge Deployment", "Quality Assurance"],
+          details: {
+            overview: "Computer Vision automatisiert visuelle Inspektionen und Analysen mit übermenschlicher Präzision und Konsistenz. Wir entwickeln Custom Vision Models für Ihre spezifischen Anforderungen – von Qualitätskontrolle über Objekterkennung bis hin zu OCR und Dokumentenanalyse.",
+            whatYouGet: [
+              "Custom Computer Vision Models mit YOLO, EfficientDet oder Custom Architectures",
+              "Automated Training Pipeline mit Active Learning und Data Augmentation",
+              "Real-time Inference optimiert für Edge-Deployment oder Cloud-Processing",
+              "Model Explainability: Visualisierung von Aktivierungen und Entscheidungsgründen",
+              "Production-Grade System mit Monitoring, A/B Testing und Continuous Training",
+              "Edge-Deployment-Option für NVIDIA Jetson, Intel NUC oder Industrial PCs"
+            ],
+            process: [
+              "Woche 1-2: Use Case Analysis, Data Collection Strategy und Architecture Design",
+              "Woche 3-6: Image Annotation, Model Training und Iterative Optimization",
+              "Woche 7-8: System Integration, Real-time Testing und Performance Optimization",
+              "Woche 9-10: Production Deployment, Monitoring und Operator Training"
+            ],
+            idealFor: "Fertigungsindustrie, Logistik, Retail und Healthcare mit Bedarf an automatisierter visueller Inspektion, Qualitätskontrolle oder Objekterkennung."
+          }
+        },
+        {
+          icon: MessageSquare,
+          title: "Natural Language Processing (NLP)",
+          description: "Enterprise NLP-Lösungen für Textanalyse, Information Extraction und semantisches Verständnis.",
+          price: "ab 35.000€",
+          features: ["Text Analytics", "Named Entity Recognition", "Sentiment Analysis", "Classification"],
+          details: {
+            overview: "Erschließen Sie den Wert in Ihren unstrukturierten Textdaten. Unsere NLP-Lösungen extrahieren Informationen, klassifizieren Dokumente, analysieren Sentiments und automatisieren textbasierte Workflows mit State-of-the-Art Transformer-Modellen.",
+            whatYouGet: [
+              "Custom NLP Pipeline mit spaCy, Hugging Face Transformers oder Azure Cognitive Services",
+              "Named Entity Recognition (NER) für domänenspezifische Entitäten und Kategorien",
+              "Text Classification und Categorization mit Multi-Label und Hierarchical Taxonomies",
+              "Sentiment Analysis und Opinion Mining für Customer Feedback und Social Media",
+              "Information Extraction für strukturierte Datengewinnung aus unstrukturierten Texten",
+              "API Deployment mit Batch-Processing und Real-time Inference Capabilities"
+            ],
+            process: [
+              "Woche 1-2: Use Case Definition, Data Assessment und Model Architecture Selection",
+              "Woche 3-5: Training Data Annotation, Model Training und Evaluation",
+              "Woche 6-7: System Integration, API Development und Performance Testing",
+              "Woche 8: Production Deployment, Documentation und Team Training"
+            ],
+            idealFor: "Unternehmen mit großen Textdaten-Mengen (Kundenanfragen, Verträge, Reports), die Informationsextraktion, Klassifikation oder Automatisierung benötigen."
+          }
         }
       ]
     },
     {
-      category: "KI-Anwendungen & Solutions",
-      icon: Brain,
-      gradient: "from-orange-600 via-orange-500 to-amber-400",
-      offerings: [
+      phase: "04",
+      title: "Erweiterte KI-Anwendungen",
+      subtitle: "State-of-the-Art KI-Architekturen für komplexe Anforderungen",
+      color: "from-green-500/10 to-green-600/5",
+      services: [
         {
-          title: "Firmeninterner KI-Chatbot (DSGVO)",
-          description: "Sicherer RAG-basierter Chatbot für interne Wissensdatenbanken",
-          price: "28.000€",
-          duration: "4-6 Wochen",
-          deliverables: ["RAG Architecture", "DSGVO Compliance", "User Interface", "Integration"]
+          icon: Database,
+          title: "Retrieval-Augmented Generation (RAG)",
+          description: "Moderne RAG-Architekturen für präzise, faktenbasierte KI-Antworten aus Ihren Unternehmensdaten.",
+          price: "ab 40.000€",
+          features: ["Vector Database", "Embedding Pipeline", "Hybrid Search", "Context Optimization"],
+          details: {
+            overview: "RAG kombiniert die Stärken von Retrieval-Systemen und Generativen Modellen für präzise, halluzinationsfreie Antworten basierend auf Ihren Unternehmensdaten. Wir implementieren production-ready RAG-Systeme mit Advanced Retrieval, Hybrid Search und optimiertem Context Management.",
+            whatYouGet: [
+              "Vector Database Setup (Pinecone, Weaviate, oder Azure AI Search) mit Sharding und Replication",
+              "Hybrid Search Architecture: Semantische Suche + Keyword Search + Metadata Filtering",
+              "Advanced Retrieval Strategies: Parent-Child Chunking, Contextual Compression und Reranking",
+              "Embedding Pipeline mit Custom Embeddings oder Domain-Adapted Models",
+              "Query Optimization: Query Rewriting, Multi-Query Generation und Hypothetical Answers",
+              "Evaluation Framework mit RAGAS Metrics für Retrieval und Generation Quality"
+            ],
+            process: [
+              "Woche 1-2: Data Assessment, Architecture Design und Vector DB Selection",
+              "Woche 3-4: Data Ingestion Pipeline, Chunking Strategy und Embedding Generation",
+              "Woche 5-6: Advanced Retrieval Implementation, Reranking und Context Optimization",
+              "Woche 7-8: Generation Pipeline, Evaluation und Production Deployment"
+            ],
+            idealFor: "Unternehmen mit umfangreichen Knowledge Bases, technischer Dokumentation oder Kundendaten, die präzise KI-Antworten ohne Halluzinationen benötigen."
+          }
         },
         {
-          title: "Document Intelligence OCR",
-          description: "Intelligente Dokumentenverarbeitung mit KI-gestützter Texterkennung",
-          price: "25.000€",
-          duration: "4 Wochen",
-          deliverables: ["OCR Integration", "Data Extraction", "Validation Workflows", "API Development"]
+          icon: Cpu,
+          title: "Multi-Agent KI-Systeme",
+          description: "Orchestrierung autonomer KI-Agenten für komplexe, mehrstufige Workflows und Entscheidungen.",
+          price: "ab 50.000€",
+          features: ["Agent Orchestration", "Tool Integration", "State Management", "Workflow Automation"],
+          details: {
+            overview: "Multi-Agent-Systeme ermöglichen KI-Lösungen für komplexe Aufgaben, die mehrere Schritte, Tools und Entscheidungen erfordern. Wir implementieren orchestrierte Agent-Systeme mit AutoGen, CrewAI oder LangGraph, die autonom komplexe Workflows abarbeiten.",
+            whatYouGet: [
+              "Multi-Agent Architecture Design mit Rollen-Spezialisierung und Koordination",
+              "Agent Orchestration mit LangGraph, AutoGen oder Custom Agent Framework",
+              "Tool Integration: APIs, Datenbanken, Search, Code Execution und Custom Tools",
+              "State Management und Memory für kontextbasierte, mehrstufige Workflows",
+              "Human-in-the-Loop Interfaces für kritische Entscheidungen und Approval Gates",
+              "Monitoring und Observability für Agent Actions, Tool Calls und Decision Paths"
+            ],
+            process: [
+              "Woche 1-2: Workflow Analysis, Agent Role Definition und Architecture Design",
+              "Woche 3-6: Agent Implementation, Tool Integration und Orchestration Logic",
+              "Woche 7-8: Testing mit Complex Scenarios, Error Handling und Recovery",
+              "Woche 9-10: Production Deployment, Monitoring Setup und Team Training"
+            ],
+            idealFor: "Unternehmen mit komplexen, mehrstufigen Prozessen (Research, Analysis, Planning) die autonome Automatisierung und intelligente Entscheidungsfindung benötigen."
+          }
         },
         {
+          icon: Layers,
+          title: "Cognitive Search Implementation",
+          description: "Enterprise Search mit KI-powered Semantic Search, Filtering und Personalisierung.",
+          price: "ab 35.000€",
+          features: ["Semantic Search", "Faceted Filtering", "Personalization", "Analytics"],
+          details: {
+            overview: "Traditionelle Keyword-Suche findet nicht, was Benutzer meinen, sondern nur, was sie schreiben. Cognitive Search mit Semantic Understanding, Natural Language Queries und personalisierten Ergebnissen transformiert die Nutzererfahrung Ihrer Enterprise Search.",
+            whatYouGet: [
+              "Azure AI Search oder Elasticsearch Setup mit Semantic Ranking und Vector Search",
+              "Multi-Modal Search: Text, Metadata, Images und strukturierte Daten kombiniert",
+              "Faceted Navigation mit dynamischen Filtern und Hierarchical Taxonomies",
+              "Query Understanding: Synonym Expansion, Spell Correction und Intent Recognition",
+              "Personalization Engine basierend auf User Behavior und Preferences",
+              "Search Analytics Dashboard mit Query Analysis, Click-Through Rates und Optimization Insights"
+            ],
+            process: [
+              "Woche 1-2: Search Requirements Analysis, Data Assessment und Architecture Design",
+              "Woche 3-4: Search Index Setup, Data Ingestion und Schema Design",
+              "Woche 5-6: Semantic Search Configuration, Ranking Optimization und Personalization",
+              "Woche 7-8: UI Integration, Analytics Setup und User Acceptance Testing"
+            ],
+            idealFor: "Unternehmen mit umfangreichen Knowledge Bases, Intranets oder Customer-facing Search, die Findability und User Experience dramatisch verbessern möchten."
+          }
+        }
+      ]
+    },
+    {
+      phase: "05",
+      title: "KI-Operations & Support",
+      subtitle: "Kontinuierlicher Betrieb für nachhaltige Wettbewerbsvorteile",
+      color: "from-purple-500/10 to-purple-600/5",
+      services: [
+        {
+          icon: Server,
+          title: "ML Ops & Model Management",
+          description: "Production-Grade MLOps für Continuous Training, Deployment und Monitoring Ihrer KI-Modelle.",
+          price: "ab 40.000€",
+          features: ["CI/CD Pipeline", "Model Registry", "A/B Testing", "Drift Detection"],
+          details: {
+            overview: "KI-Modelle in Production brauchen kontinuierliches Management: Retraining bei Data Drift, A/B Testing neuer Versionen, Performance Monitoring und Rollback bei Problemen. Wir implementieren MLOps-Pipelines, die Ihre KI-Systeme zuv erläss ig, skalierbar und wartbar machen.",
+            whatYouGet: [
+              "CI/CD Pipeline für automatisiertes Model Training, Testing und Deployment",
+              "Model Registry mit Versionierung, Lineage Tracking und Governance",
+              "Automated Retraining Pipeline mit Data Drift Detection und Trigger Logic",
+              "A/B Testing Framework für Safe Deployment neuer Modell-Versionen",
+              "Comprehensive Monitoring: Performance Metrics, Data Quality und Model Behavior",
+              "Model Explainability Dashboard mit SHAP Values und Feature Importance Tracking"
+            ],
+            process: [
+              "Woche 1-2: Current State Assessment, Tool Selection und Architecture Design",
+              "Woche 3-5: MLOps Platform Setup (MLflow, Kubeflow, oder Azure ML)",
+              "Woche 6-8: CI/CD Pipeline Implementation, Monitoring und Alerting Setup",
+              "Woche 9-10: Team Training, Documentation und Handover"
+            ],
+            idealFor: "Unternehmen mit produktiven ML-Modellen, die zuverlässige, automatisierte Model Lifecycle Management und minimale Downtime benötigen."
+          }
+        },
+        {
+          icon: Phone,
+          title: "KI Support & Wartung (24/7)",
+          description: "Professioneller 24/7 Support für Ihre produktiven KI-Systeme mit SLA-Garantien.",
+          price: "ab 5.000€/Monat",
+          features: ["24/7 Monitoring", "Incident Response", "Performance Optimization", "Continuous Improvement"],
+          details: {
+            overview: "Produktive KI-Systeme brauchen kontinuierliche Überwachung, schnelle Incident Response und proaktive Optimierung. Unser Managed Service bietet 24/7 Support mit SLA-Garantien, damit Ihre KI-Systeme zuverlässig laufen und sich kontinuierlich verbessern.",
+            whatYouGet: [
+              "24/7 System Monitoring mit automatischen Alerts für Anomalien und Incidents",
+              "SLA-garantierte Response Times: 15min für P1, 1h für P2, 4h für P3 Incidents",
+              "Incident Management mit Root Cause Analysis und Preventive Measures",
+              "Performance Optimization: Regelmäßiges Tuning von Modellen, Infrastruktur und Costs",
+              "Monatliche Health Reports mit Uptime, Performance Metrics und Optimization Recommendations",
+              "Continuous Improvement: Proaktive Identifikation von Verbesserungspotentialen"
+            ],
+            process: [
+              "Onboarding (2 Wochen): System Assessment, Runbook Development und Alert Setup",
+              "Continuous Operations: Monitoring, Incident Response und Performance Management",
+              "Monthly Business Reviews: Health Reports, Optimization Planning und Roadmap",
+              "Quarterly Deep Dives: Architecture Reviews und Strategic Improvements"
+            ],
+            idealFor: "Unternehmen mit kritischen, produktiven KI-Systemen, die maximale Uptime, schnelle Problem-Resolution und kontinuierliche Optimierung benötigen."
+          }
+        }
+      ]
+    },
+    {
+      phase: "06",
+      title: "KI-Lösungen & Plattformen",
+      subtitle: "Enterprise-ready KI-Systeme für Ihre Geschäftsprozesse",
+      color: "from-orange-500/10 to-orange-600/5",
+      services: [
+        {
+          icon: MessageSquare,
+          title: "Firmeninterner KI-Chatbot",
+          description: "DSGVO-konformer Enterprise-Chatbot mit tiefem Verständnis Ihrer Dokumente und Daten.",
+          price: "ab 30.000€",
+          features: ["Secure Deployment", "Document Understanding", "Context Awareness", "Integration APIs"]
+        },
+        {
+          icon: Brain,
+          title: "Azure AI Foundry Setup",
+          description: "Aufbau einer sicheren, skalierbaren und compliance-konformen KI-Plattform auf Azure.",
+          price: "ab 30.000€",
+          features: ["Platform Setup", "Security Config", "MLOps Pipeline", "Governance"]
+        },
+        {
+          icon: Layers,
+          title: "MCP Integration",
+          description: "Model Context Protocol für universelle Datenanbindung und skalierbare KI-Agenten.",
+          price: "ab 25.000€",
+          features: ["MCP Implementation", "Data Connectors", "Agent Framework", "API Integration"]
+        },
+        {
+          icon: Database,
+          title: "Enterprise Datenplattform Plus",
+          description: "Maßgeschneiderte Daten- und KI-Plattform für Ihre spezifischen Unternehmensanforderungen.",
+          price: "ab 50.000€",
+          features: ["Custom Architecture", "Data Pipeline", "AI Integration", "Scalability"]
+        },
+        {
+          icon: BarChart3,
+          title: "Controlling Cockpit",
+          description: "Vollautomatisierte tagesaktuelle KPIs und Power BI Dashboards in wenigen Wochen.",
+          price: "ab 50.000€",
+          features: ["Automated KPIs", "Real-time Dashboards", "Self-Service BI", "Mobile Access"]
+        },
+        {
+          icon: Shield,
+          title: "Private KI-Infrastruktur",
+          description: "DSGVO-konforme, vollständig lokale Open-Source-Lösung mit kompletter Datenhoheit.",
+          price: "ab 30.000€",
+          features: ["On-Premise Deployment", "Open Source Stack", "Full Data Control", "GDPR Compliant"]
+        },
+        {
+          icon: Database,
+          title: "Datenplattform Development",
+          description: "Produktionsreife Datenplattform mit Datenquellen und Reporting in 4-6 Wochen.",
+          price: "ab 30.000€",
+          features: ["Fast Deployment", "Data Sources", "ETL Pipelines", "Reporting Layer"]
+        },
+        {
+          icon: Brain,
+          title: "AWS SageMaker Implementation",
+          description: "Enterprise-Implementierung der AWS KI-Plattform SageMaker für ML-Workflows.",
+          price: "ab 45.000€",
+          features: ["SageMaker Setup", "Model Training", "Deployment Pipeline", "Monitoring"]
+        },
+        {
+          icon: Wrench,
+          title: "Smart Maintenance mit KI",
+          description: "Azure-basierte Predictive-Maintenance-Lösung zur proaktiven Vermeidung von Ausfällen.",
+          price: "ab 45.000€",
+          features: ["Predictive Models", "IoT Integration", "Alert System", "Dashboard"]
+        },
+        {
+          icon: Eye,
           title: "Computer Vision Qualitätskontrolle",
-          description: "Automatisierte Qualitätsprüfung mit Deep Learning und Bildanalyse",
-          price: "45.000€",
-          duration: "8-10 Wochen",
-          deliverables: ["Model Training", "Camera Integration", "Real-time Detection", "Reporting Dashboard"]
+          description: "Echtzeit-Bildprüfung auf Azure mit vollständiger Datenhoheit und schneller Amortisation.",
+          price: "ab 45.000€",
+          features: ["Vision Models", "Real-time Processing", "Quality Detection", "Reporting"]
         },
         {
-          title: "Custom AI Models & Training",
-          description: "Maßgeschneiderte Machine Learning Modelle für Ihre spezifischen Anforderungen",
-          price: "50.000€",
-          duration: "8-12 Wochen",
-          deliverables: ["Data Analysis", "Model Development", "Training & Optimization", "Deployment"]
+          icon: MessageSquare,
+          title: "KI Chatbot mit SAP-Integration",
+          description: "Nutzen Sie natürliche Sprache für den Zugriff auf Ihre SAP-Daten via firmeninternem Chatbot.",
+          price: "ab 25.000€",
+          features: ["SAP Connector", "NL Query", "Real-time Data", "User Management"]
+        },
+        {
+          icon: Sparkles,
+          title: "KI Accelerator: 8 Wochen Programm",
+          description: "Beschleunigen Sie Ihre KI-Transformation durch unser strukturiertes 8-Wochen-Programm.",
+          price: "ab 35.000€",
+          features: ["Fast Track Implementation", "Quick Wins", "Team Training", "Production Ready"]
+        },
+        {
+          icon: Cpu,
+          title: "KI Agent Pilotprojekt",
+          description: "Entwicklung autonomer KI-Agenten zur Automatisierung komplexer Prozessketten.",
+          price: "ab 25.000€",
+          features: ["Agent Development", "Process Automation", "Tool Integration", "Validation"]
+        },
+        {
+          icon: Database,
+          title: "Vektordatenbank-Integration",
+          description: "Skalierbare Datenintegration in Vektordatenbanken für fortgeschrittene RAG-Architekturen.",
+          price: "ab 50.000€",
+          features: ["Data Pipeline", "Vector Embeddings", "RAG Implementation", "Scaling"]
+        },
+        {
+          icon: Layers,
+          title: "Data Mesh Beratung",
+          description: "Skalierung dezentraler Datenarchitekturen mit modernen Data-Mesh-Prinzipien.",
+          price: "ab 50.000€",
+          features: ["Architecture Design", "Domain Setup", "Data Products", "Governance"]
+        },
+        {
+          icon: BarChart3,
+          title: "Self-Service SAP Reporting",
+          description: "Moderne SAP-Reporting-Lösungen ohne Abhängigkeiten zu anderen Abteilungen.",
+          price: "ab 80.000€",
+          features: ["SAP Extraction", "Power BI Integration", "Self-Service Portal", "Training"]
+        },
+        {
+          icon: FileSearch,
+          title: "KI-powered SharePoint Wiki",
+          description: "Verbinden Sie Ihre KI mit dem SharePoint Wiki für intelligente Wissenssuche.",
+          price: "ab 20.000€",
+          features: ["SharePoint Integration", "Semantic Search", "Chat Interface", "Knowledge Graph"]
         }
       ]
     },
     {
-      category: "Data Analytics & BI",
-      icon: BarChart3,
-      gradient: "from-green-600 via-green-500 to-emerald-400",
-      offerings: [
+      phase: "04",
+      title: "Managed Services & Support",
+      subtitle: "Kontinuierlicher Betrieb für nachhaltige Wettbewerbsvorteile",
+      color: "from-green-500/10 to-green-600/5",
+      services: [
         {
-          title: "Power BI Controlling-Cockpit",
-          description: "Vollautomatisiertes Finanz-Cockpit mit Real-time Dashboards",
-          price: "50.000€",
-          duration: "6-8 Wochen",
-          deliverables: ["Automatisierung", "Power BI Dashboards", "Real-time Updates", "Custom KPIs"]
+          icon: Phone,
+          title: "KI Voice Bots",
+          description: "Intelligente Sprachassistenten für echte Telefongespräche mit Ihren Kunden.",
+          price: "ab 15.000€",
+          features: ["Voice AI", "Natural Conversations", "Call Routing", "Analytics"]
         },
         {
-          title: "Microsoft Fabric Datenplattform",
-          description: "Moderne Data Lakehouse Architektur mit Fabric und OneLake",
-          price: "65.000€",
-          duration: "8-10 Wochen",
-          deliverables: ["Fabric Setup", "Data Pipeline", "Analytics Workspace", "Governance"]
+          icon: MessageSquare,
+          title: "Enterprise Chatbot mit OpenWebUI",
+          description: "Kosteneffizienter Enterprise-Chatbot mit Open-Source-Technologien (1€/User/Monat).",
+          price: "ab 5.000€",
+          features: ["OpenWebUI Setup", "Model Integration", "Multi-User", "Cost Efficient"]
         },
         {
-          title: "SAP KI-Chatbot Integration",
-          description: "Self-Service SAP-Reporting durch Natural Language Interface",
-          price: "35.000€",
-          duration: "6 Wochen",
-          deliverables: ["SAP Integration", "Natural Language", "Custom Reports", "Training"]
-        }
-      ]
-    },
-    {
-      category: "KI Managed Services",
-      icon: Shield,
-      gradient: "from-indigo-600 via-indigo-500 to-blue-400",
-      offerings: [
-        {
-          title: "KI-Plattform Managed Service",
-          description: "24/7 Betrieb und Wartung Ihrer KI-Infrastruktur und Modelle",
-          price: "9.500€/Monat",
-          duration: "Ongoing",
-          deliverables: ["24/7 Monitoring", "Model Retraining", "Performance Optimization", "Security Updates"]
+          icon: Cpu,
+          title: "Automatische Ticket-Erstellung",
+          description: "KI-gestützte automatische Ticket-Generierung für Geschäftsprozesse und Kundenanfragen.",
+          price: "auf Anfrage",
+          features: ["Auto-Ticketing", "Classification", "Routing", "Integration"]
         },
         {
-          title: "MLOps as a Service",
-          description: "Vollständiges MLOps-Management für continuous training und deployment",
-          price: "12.000€/Monat",
-          duration: "Ongoing",
-          deliverables: ["Pipeline Management", "Model Versioning", "A/B Testing", "Incident Response"]
+          icon: Eye,
+          title: "Vision Language Models (VLMs)",
+          description: "Fortgeschrittene Dokumentenverarbeitung, Bildersuche und Tabellenextraktion mit VLMs.",
+          price: "ab 30.000€",
+          features: ["VLM Integration", "Document AI", "Image Search", "Table Extraction"]
         },
         {
-          title: "KI-Beratung Retainer",
-          description: "Kontinuierliche strategische Beratung für Ihre KI-Initiative",
-          price: "8.000€/Monat",
-          duration: "Flexibel",
-          deliverables: ["Strategy Sessions", "Architecture Reviews", "Use Case Workshops", "Priority Support"]
+          icon: LineChart,
+          title: "Zeitreihenanalyse & Forecasting",
+          description: "Verkaufsprognosen und strategische Planung mit fortgeschrittener Zeitreihenanalyse.",
+          price: "ab 100.000€",
+          features: ["Time Series Models", "Sales Forecasting", "Planning Tools", "What-If Analysis"]
+        },
+        {
+          icon: Database,
+          title: "Managed Database Services",
+          description: "Vollständige Verwaltung Ihrer Datenbanken – mehr Zeit für Ihr Kerngeschäft.",
+          price: "ab 15.000€",
+          features: ["24/7 Monitoring", "Backup & Recovery", "Performance Tuning", "Security Updates"]
+        },
+        {
+          icon: Server,
+          title: "Data & AI Managed Services Azure",
+          description: "Wartung und Überwachung kritischer Daten- und KI-Workloads auf Azure.",
+          price: "ab 3.000€",
+          features: ["Proactive Monitoring", "Incident Response", "Cost Optimization", "Reporting"]
+        },
+        {
+          icon: BarChart3,
+          title: "Power BI & Fabric Support",
+          description: "Serviceverträge für stets verfügbares und aktuelles Berichtswesen.",
+          price: "ab 3.000€",
+          features: ["24/7 Support", "Dashboard Maintenance", "Performance Optimization", "User Support"]
+        },
+        {
+          icon: Database,
+          title: "Datenplattform Managed Service",
+          description: "Fokus auf Wertschöpfung – wir kümmern uns um Ihre Datenplattform.",
+          price: "ab 3.000€",
+          features: ["Platform Management", "Updates & Patches", "Monitoring", "SLA Guarantee"]
+        },
+        {
+          icon: Layers,
+          title: "Individuelle Managed Services",
+          description: "Maßgeschneiderte Managed Services für Datenplattform, KI, Power BI und Infrastruktur.",
+          price: "auf Anfrage",
+          features: ["Custom SLA", "Dedicated Support", "Full Stack Management", "Flexible Pricing"]
         }
       ]
     }
   ];
 
-  const benefits = [
-    { icon: Target, title: "95% Genauigkeit", description: "State-of-the-art KI-Modelle" },
-    { icon: TrendingUp, title: "60% Zeitersparnis", description: "Durch intelligente Automation" },
-    { icon: Zap, title: "10x schnellere Insights", description: "Mit KI-gestützter Analyse" },
-    { icon: Shield, title: "DSGVO-konform", description: "Datenschutz by Design" }
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 px-4 overflow-hidden bg-gradient-to-br from-brand-primary/5 via-white to-brand-accent/5">
-        {/* Background decoration */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
-          <div className="absolute top-0 left-10 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl opacity-60 animate-blob" />
-          <div className="absolute top-40 right-10 w-80 h-80 bg-brand-accent/10 rounded-full blur-3xl opacity-60 animate-blob animation-delay-2000" />
-          <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-brand-primary/5 rounded-full blur-3xl opacity-40 animate-blob animation-delay-4000" />
-        </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
+      <section className="pt-32 pb-20 px-4">
+        <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-center"
           >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-brand-primary/10 backdrop-blur-sm rounded-full border border-brand-primary/20 mb-6"
-            >
-              <Sparkles className="w-4 h-4 text-brand-primary" />
+            <div className="inline-block mb-4 px-4 py-2 bg-brand-primary/10 rounded-full">
               <span className="text-brand-primary font-semibold text-sm">KI & Datenanalyse</span>
-            </motion.div>
-            
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-slate-900">
-              Künstliche Intelligenz{" "}
-              <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">
-                für Ihr Business
-              </span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+              Künstliche Intelligenz für <span className="text-brand-primary">Ihr Business</span>
             </h1>
-            
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
               Nutzen Sie die Kraft der Künstlichen Intelligenz für Ihr Unternehmen. 
-              Wir entwickeln maßgeschneiderte KI-Lösungen und verwandeln Ihre Daten in wertvolle Insights.
+              Wir entwickeln maßgeschneiderte KI-Lösungen und verwandeln Ihre Daten in wertvolle Insights, 
+              die echte Wettbewerbsvorteile schaffen.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-brand-primary to-brand-accent hover:shadow-xl hover:shadow-brand-primary/20 transition-all duration-300"
-              >
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg">
                 KI-Potenzial analysieren
-                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-brand-primary/20 hover:border-brand-primary/40 hover:bg-brand-primary/5"
-              >
+              <Button size="lg" variant="outline">
                 Leistungen ansehen
               </Button>
             </div>
           </motion.div>
-
-          {/* Benefits Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto"
-          >
-            {benefits.map((benefit, idx) => {
-              const Icon = benefit.icon;
-              return (
-                <motion.div
-                  key={benefit.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 + idx * 0.1 }}
-                  className="relative group"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/10 to-brand-accent/10 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
-                  <div className="relative p-6 bg-white rounded-2xl border-2 border-slate-100 group-hover:border-brand-primary/30 transition-all duration-300 shadow-lg group-hover:shadow-xl">
-                    <Icon className="w-8 h-8 text-brand-primary mb-3" />
-                    <div className="text-2xl font-bold text-slate-900 mb-1">{benefit.title}</div>
-                    <div className="text-sm text-slate-600">{benefit.description}</div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
         </div>
       </section>
 
-      {/* Solutions Sections */}
-      {solutions.map((solution, solutionIdx) => {
-        const Icon = solution.icon;
-        return (
-          <section 
-            key={solution.category} 
-            className={`py-24 px-4 relative ${solutionIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}
-          >
-            <div className="max-w-7xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="mb-16"
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className={`p-4 bg-gradient-to-br ${solution.gradient} rounded-2xl shadow-lg`}>
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900">{solution.category}</h2>
-                    <div className={`h-1 w-24 bg-gradient-to-r ${solution.gradient} rounded-full mt-3`} />
-                  </div>
+      {/* Service Categories */}
+      {serviceCategories.map((category, catIdx) => (
+        <section key={category.phase} className={`py-20 px-4 ${catIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}>
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <span className="text-6xl font-bold text-brand-primary/20">{category.phase}</span>
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900">{category.title}</h2>
+                  <p className="text-lg text-slate-600 mt-1">{category.subtitle}</p>
                 </div>
-              </motion.div>
+              </div>
+            </motion.div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {solution.offerings.map((offering, idx) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {category.services.map((service, idx) => {
+                const Icon = service.icon;
+                return (
                   <motion.div
-                    key={offering.title}
-                    initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    key={service.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="group relative"
+                    transition={{ delay: idx * 0.05 }}
+                    onClick={() => service.details && setSelectedOffering(service)}
+                    className={`group relative ${service.details ? 'cursor-pointer' : ''}`}
                   >
-                    <div className={`absolute -inset-0.5 bg-gradient-to-r ${solution.gradient} rounded-3xl opacity-0 group-hover:opacity-20 blur transition-all duration-500`} />
-                    
-                    <div className="relative h-full p-8 bg-white rounded-3xl border-2 border-slate-100 group-hover:border-transparent transition-all duration-300 shadow-lg group-hover:shadow-2xl">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${category.color} rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500`} />
+                    <div className="relative h-full p-6 bg-white rounded-2xl border-2 border-slate-100 group-hover:border-brand-primary/30 transition-all duration-300 shadow-lg group-hover:shadow-xl flex flex-col">
                       <div className="flex items-start justify-between mb-4">
-                        <h3 className="text-2xl font-bold text-slate-900 group-hover:text-brand-primary transition-colors duration-300">
-                          {offering.title}
-                        </h3>
-                        <div className="flex flex-col items-end gap-1">
-                          <div className={`px-4 py-2 bg-gradient-to-r ${solution.gradient} rounded-xl shadow-md`}>
-                            <span className="text-white font-bold text-lg">{offering.price}</span>
-                          </div>
-                          <span className="text-xs text-slate-500">{offering.duration}</span>
+                        <div className="p-3 bg-slate-900 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                          <Icon className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="px-3 py-1.5 bg-slate-900 rounded-lg shrink-0">
+                          <span className="text-sm font-bold text-white whitespace-nowrap">{service.price}</span>
                         </div>
                       </div>
-
-                      <p className="text-slate-600 text-base mb-6 leading-relaxed">
-                        {offering.description}
+                      
+                      <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-brand-primary transition-colors">
+                        {service.title}
+                      </h3>
+                      
+                      <p className="text-slate-600 text-sm mb-4 flex-grow">
+                        {service.description}
                       </p>
+                      
+                      <ul className="space-y-1.5 pt-4 border-t border-slate-100 mb-4">
+                        {service.features.map((feature) => (
+                          <li key={feature} className="flex items-start text-xs text-slate-600">
+                            <CheckCircle className="w-3 h-3 text-brand-primary mr-1.5 mt-0.5 flex-shrink-0" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
 
-                      <div className="space-y-2 pt-6 border-t border-slate-200">
-                        <div className="text-sm font-semibold text-slate-500 mb-3">Lieferumfang:</div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                          {offering.deliverables.map((deliverable) => (
-                            <div key={deliverable} className="flex items-center gap-2 text-sm text-slate-700">
-                              <CheckCircle className="w-4 h-4 text-brand-accent flex-shrink-0" />
-                              <span>{deliverable}</span>
-                            </div>
-                          ))}
+                      {(service as any).details && (
+                        <div className="mt-auto flex items-center gap-2 text-brand-primary opacity-0 group-hover:opacity-100 transition-all duration-300">
+                          <span className="text-sm font-semibold">Mehr erfahren</span>
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </div>
-                      </div>
-
-                      <div className="mt-6 flex items-center gap-2 text-brand-primary opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <span className="text-sm font-semibold">Mehr erfahren</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </div>
+                      )}
                     </div>
                   </motion.div>
-                ))}
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {/* Modal */}
+      {selectedOffering && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full my-8 relative"
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedOffering(null)}
+              className="absolute top-6 right-6 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors z-10"
+            >
+              <X className="w-5 h-5 text-slate-600" />
+            </button>
+
+            <div className="p-8 md:p-12 max-h-[85vh] overflow-y-auto">
+              {/* Header */}
+              <div className="mb-8">
+                <div className="inline-block px-4 py-2 bg-brand-primary/10 rounded-full mb-4">
+                  <span className="text-brand-primary font-bold text-2xl">{selectedOffering.price}</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                  {selectedOffering.title}
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  {selectedOffering.description}
+                </p>
+                <div className="flex items-center gap-4 mt-4 text-sm text-slate-500">
+                  {selectedOffering.duration && (
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4" />
+                      <span>{selectedOffering.duration}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Overview */}
+              {selectedOffering.details?.overview && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-brand-primary" />
+                    Überblick
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    {selectedOffering.details.overview}
+                  </p>
+                </div>
+              )}
+
+              {/* What You Get */}
+              {selectedOffering.details?.whatYouGet && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-brand-accent" />
+                    Was Sie bekommen
+                  </h3>
+                  <div className="space-y-3">
+                    {selectedOffering.details.whatYouGet.map((item: string, idx: number) => (
+                      <div key={idx} className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+                        <div className="w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="text-brand-primary text-sm font-bold">{idx + 1}</span>
+                        </div>
+                        <p className="text-slate-700">{item}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Process */}
+              {selectedOffering.details?.process && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <Target className="w-5 h-5 text-brand-primary" />
+                    Unser Vorgehen
+                  </h3>
+                  <div className="space-y-3">
+                    {selectedOffering.details.process.map((step: string, idx: number) => (
+                      <div key={idx} className="flex items-start gap-4">
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-primary to-brand-accent flex items-center justify-center flex-shrink-0">
+                          <span className="text-white text-sm font-bold">{idx + 1}</span>
+                        </div>
+                        <p className="text-slate-700 pt-1">{step}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Ideal For */}
+              {selectedOffering.details?.idealFor && (
+                <div className="mb-8 p-6 bg-gradient-to-br from-brand-primary/5 to-brand-accent/5 rounded-2xl border-2 border-brand-primary/10">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                    <Users className="w-5 h-5 text-brand-primary" />
+                    Ideal für
+                  </h3>
+                  <p className="text-slate-700">{selectedOffering.details.idealFor}</p>
+                </div>
+              )}
+
+              {/* Deliverables */}
+              {selectedOffering.features && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <Award className="w-5 h-5 text-brand-accent" />
+                    Lieferumfang
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {selectedOffering.features.map((item: string) => (
+                      <div key={item} className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg">
+                        <CheckCircle className="w-5 h-5 text-brand-accent flex-shrink-0" />
+                        <span className="text-slate-700">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* CTA */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  size="lg" 
+                  className="flex-1 bg-gradient-to-r from-brand-primary to-brand-accent"
+                >
+                  Jetzt anfragen
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="flex-1"
+                  onClick={() => setSelectedOffering(null)}
+                >
+                  Zurück zur Übersicht
+                </Button>
               </div>
             </div>
-          </section>
-        );
-      })}
+          </motion.div>
+        </div>
+      )}
 
       {/* CTA Section */}
-      <section className="relative py-32 px-4 overflow-hidden bg-gradient-to-br from-brand-primary via-brand-primary to-brand-accent">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]" />
-        
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+      <section className="py-20 px-4 bg-gradient-to-br from-brand-primary to-brand-primary/90">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Sparkles className="w-12 h-12 text-white/90 mx-auto mb-6" />
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Bereit für KI-Innovation?
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Bereit für intelligente Lösungen?
             </h2>
-            <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-              Lassen Sie uns gemeinsam Ihre KI-Strategie entwickeln und umsetzen.
+            <p className="text-lg text-white/90 mb-8">
+              Lassen Sie uns gemeinsam herausfinden, welche KI-Potenziale in Ihrem Unternehmen stecken.
             </p>
-            <Button 
-              size="lg" 
-              className="bg-white text-brand-primary hover:bg-slate-50 shadow-2xl text-lg px-8"
-            >
-              Jetzt kostenlos beraten lassen
-              <ArrowRight className="w-5 h-5 ml-2" />
+            <Button size="lg" variant="outline" className="bg-white text-brand-primary hover:bg-slate-50">
+              Kostenloses KI-Assessment buchen
             </Button>
-            
-            <div className="mt-8 flex items-center justify-center gap-8 text-sm text-white/80">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-white" />
-                <span>100% unverbindlich</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-white" />
-                <span>DSGVO-konform</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-white" />
-                <span>Individuelle Lösungen</span>
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>
