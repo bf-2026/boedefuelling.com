@@ -64,10 +64,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-slate-600 mb-10 max-w-3xl mx-auto">
-          Wir helfen Unternehmen aus der Industrie und anderen Branchen, ihre
-          Prozesse und ihr Wissen in KI-gestützte Systeme zu verwandeln –
-          Lösungen, die nicht experimentell, sondern direkt messbar Effizienz
-          erhöhen und Kosten senken.
+          Wir helfen Unternehmen aus der Industrie, ihre Prozesse und ihr Wissen
+          in KI-gestützte Systeme zu verwandeln – Lösungen, die nicht
+          experimentell, sondern direkt messbar Effizienz erhöhen und Kosten
+          senken.
         </motion.p>
 
         <motion.div

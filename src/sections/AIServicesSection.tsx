@@ -17,8 +17,8 @@ const aiServices = [
     icon: BarChart3,
     items: [
       "Automatisierte Angebotserstellung (CPQ)",
-      "Workflow-Automatisierung von CAD-Aufgaben",
-      "Automatisierte Maschinendatenverarbeitung",
+      "Workflow-Automatisierung zur Planung, Freigabe, Nachverfolgung",
+      "Automatisierte Erstellung von Management Reports",
       "Automatisierte Teilebestellung bei Lieferanten",
     ],
   },
