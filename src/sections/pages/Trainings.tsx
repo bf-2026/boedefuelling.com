@@ -8,21 +8,18 @@ export default function TrainingsPage() {
       icon: BookOpen,
       title: "KI Grundlagen",
       description: "Verstehen Sie die Basics: Was ist KI, wo passt es in Ihr Business, und wie starten Sie richtig?",
-      duration: "3 Tage",
       target: "Alle Abteilungen",
     },
     {
       icon: Zap,
       title: "Praktische KI-Integration",
       description: "Hands-on Training: Wie Sie KI-Systeme in Ihre bestehenden Prozesse integrieren und nutzen.",
-      duration: "5 Tage",
       target: "Tech & Process Teams",
     },
     {
       icon: Lock,
       title: "KI und DSGVO",
       description: "Etablieren Sie unternehmensweite KI-Governance und rechtskonforme Compliance-Rahmen für Ihre KI-Projekte.",
-      duration: "1 Tag",
       target: "Legal & Compliance",
     },
   ];
@@ -136,15 +133,10 @@ export default function TrainingsPage() {
                       {training.description}
                     </p>
 
-                    <div className="pt-6 border-t border-slate-200 space-y-3">
-                      <div className="flex items-center justify-between">
-                        <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-primary/10 text-brand-primary text-sm font-semibold rounded-lg">
-                          📅 {training.duration}
-                        </span>
-                        <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 text-slate-700 text-sm font-semibold rounded-lg">
-                          👥 {training.target}
-                        </span>
-                      </div>
+                    <div className="pt-6 border-t border-slate-200">
+                      <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 text-slate-700 text-sm font-semibold rounded-lg">
+                        👥 {training.target}
+                      </span>
                     </div>
                   </div>
                 </motion.div>

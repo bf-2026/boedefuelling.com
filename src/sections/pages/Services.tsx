@@ -16,7 +16,6 @@ export default function KIDatenanalysePage() {
           icon: Database,
           title: "Retrieval-Augmented Generation (RAG)",
           description: "Moderne RAG-Architekturen für präzise, faktenbasierte KI-Antworten aus Ihren Unternehmensdaten.",
-          price: "ab 40.000€",
           features: ["Vector Database", "Embedding Pipeline", "Hybrid Search", "Context Optimization"],
           details: {
             overview: "RAG kombiniert die Stärken von Retrieval-Systemen und Generativen Modellen für präzise, halluzinationsfreie Antworten basierend auf Ihren Unternehmensdaten. Wir implementieren production-ready RAG-Systeme mit Advanced Retrieval, Hybrid Search und optimiertem Context Management.",
@@ -41,7 +40,6 @@ export default function KIDatenanalysePage() {
           icon: Cpu,
           title: "Multi-Agent KI-Systeme",
           description: "Orchestrierung autonomer KI-Agenten für komplexe, mehrstufige Workflows und Entscheidungen.",
-          price: "ab 50.000€",
           features: ["Agent Orchestration", "Tool Integration", "State Management", "Workflow Automation"],
           details: {
             overview: "Multi-Agent-Systeme ermöglichen KI-Lösungen für komplexe Aufgaben, die mehrere Schritte, Tools und Entscheidungen erfordern. Wir implementieren orchestrierte Agent-Systeme mit AutoGen, CrewAI oder LangGraph, die autonom komplexe Workflows abarbeiten.",
@@ -66,7 +64,6 @@ export default function KIDatenanalysePage() {
           icon: Cpu,
           title: "KI Agent Pilotprojekt",
           description: "Entwicklung autonomer KI-Agenten zur Automatisierung komplexer Prozessketten.",
-          price: "ab 25.000€",
           features: ["Agent Development", "Process Automation", "Tool Integration", "Validation"]
         }
       ]
@@ -81,21 +78,18 @@ export default function KIDatenanalysePage() {
           icon: MessageSquare,
           title: "Firmeninterner KI-Chatbot",
           description: "DSGVO-konformer Enterprise-Chatbot mit tiefem Verständnis Ihrer Dokumente und Daten.",
-          price: "ab 30.000€",
           features: ["Secure Deployment", "Document Understanding", "Context Awareness", "Integration APIs"]
         },
         {
           icon: Brain,
           title: "Azure AI Foundry Setup",
           description: "Aufbau einer sicheren, skalierbaren und compliance-konformen KI-Plattform auf Azure.",
-          price: "ab 30.000€",
           features: ["Platform Setup", "Security Config", "MLOps Pipeline", "Governance"]
         },
         {
           icon: BarChart3,
           title: "Controlling Cockpit",
           description: "Vollautomatisierte tagesaktuelle KPIs und Power BI Dashboards in wenigen Wochen.",
-          price: "ab 50.000€",
           features: ["Automated KPIs", "Real-time Dashboards", "Self-Service BI", "Mobile Access"]
         }
       ]
@@ -110,7 +104,6 @@ export default function KIDatenanalysePage() {
           icon: Phone,
           title: "KI Support & Wartung (24/7)",
           description: "Professioneller 24/7 Support für Ihre produktiven KI-Systeme mit SLA-Garantien.",
-          price: "ab 5.000€/Monat",
           features: ["24/7 Monitoring", "Incident Response", "Performance Optimization", "Continuous Improvement"],
           details: {
             overview: "Produktive KI-Systeme brauchen kontinuierliche Überwachung, schnelle Incident Response und proaktive Optimierung. Unser Managed Service bietet 24/7 Support mit SLA-Garantien, damit Ihre KI-Systeme zuverlässig laufen und sich kontinuierlich verbessern.",
@@ -203,12 +196,9 @@ export default function KIDatenanalysePage() {
                   >
                     <div className={`absolute inset-0 bg-gradient-to-br ${category.color} rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500`} />
                     <div className="relative h-full p-6 bg-white rounded-2xl border-2 border-slate-100 group-hover:border-brand-primary/30 transition-all duration-300 shadow-lg group-hover:shadow-xl flex flex-col">
-                      <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-start mb-4">
                         <div className="p-3 bg-slate-900 rounded-lg group-hover:scale-110 transition-transform duration-300">
                           <Icon className="w-6 h-6 text-white" />
-                        </div>
-                        <div className="px-3 py-1.5 bg-slate-900 rounded-lg shrink-0">
-                          <span className="text-sm font-bold text-white whitespace-nowrap">{service.price}</span>
                         </div>
                       </div>
                       
@@ -264,9 +254,6 @@ export default function KIDatenanalysePage() {
             <div className="p-8 md:p-12 max-h-[85vh] overflow-y-auto">
               {/* Header */}
               <div className="mb-8">
-                <div className="inline-block px-4 py-2 bg-brand-primary/10 rounded-full mb-4">
-                  <span className="text-brand-primary font-bold text-2xl">{selectedOffering.price}</span>
-                </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
                   {selectedOffering.title}
                 </h2>
