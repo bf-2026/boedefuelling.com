@@ -22,6 +22,7 @@ import CasesPage from "./sections/pages/Cases";
 import CompanyPage from "./sections/pages/Company";
 import CareersPage from "./sections/pages/Careers";
 import TrainingsPage from "./sections/pages/Trainings";
+import InsightsPage from "./sections/pages/Insights";
 
 function HomePage() {
   return (
@@ -94,6 +95,15 @@ function App() {
           element={
             <Layout>
               <TrainingsPage />
+              <Footer />
+            </Layout>
+          }
+        />
+        <Route
+          path="/insights"
+          element={
+            <Layout>
+              <InsightsPage />
               <Footer />
             </Layout>
           }
