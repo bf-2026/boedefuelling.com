@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { BookOpen, Users, Zap, Award, Brain, Cloud, Lock, TrendingUp, Cpu, Code } from "lucide-react";
+import { BookOpen, Zap, Brain, Cloud, Lock, TrendingUp, Cpu, Code } from "lucide-react";
 import { Button } from "../../components/ui/Button";
 
 export default function TrainingsPage() {
   const trainings = [
     {
       icon: BookOpen,
-      title: "KI Grundlagen für Unternehmen",
+      title: "KI Grundlagen",
       description: "Verstehen Sie die Basics: Was ist KI, wo passt es in Ihr Business, und wie starten Sie richtig?",
       duration: "3 Tage",
       target: "Alle Abteilungen",
@@ -19,103 +19,15 @@ export default function TrainingsPage() {
       target: "Tech & Process Teams",
     },
     {
-      icon: Users,
-      title: "KI für Leadership & Strategy",
-      description: "Strategische Perspektive: KI-Roadmaps, Change Management, und ROI-Planung für Entscheider.",
-      duration: "2 Tage",
-      target: "Management & C-Level",
-    },
-    {
-      icon: Award,
-      title: "Certification Program",
-      description: "Umfassendes Programm mit Zertifikat: Werden Sie zum KI-Experten in Ihrem Unternehmen.",
-      duration: "10 Wochen",
-      target: "Hochmotivierte Teams",
+      icon: Lock,
+      title: "KI und DSGVO",
+      description: "Etablieren Sie unternehmensweite KI-Governance und rechtskonforme Compliance-Rahmen für Ihre KI-Projekte.",
+      duration: "1 Tag",
+      target: "Legal & Compliance",
     },
   ];
 
-  const aiWorkshops = [
-    {
-      icon: Brain,
-      title: "AI Readiness Assessment",
-      description: "Evaluieren Sie die KI-Bereitschaft Ihrer Organisation und entwickeln Sie eine fundierte Implementierungsstrategie.",
-      duration: "1-2 Tage",
-      level: "Foundation",
-    },
-    {
-      icon: Cloud,
-      title: "Azure KI Architektur Workshop",
-      description: "Entwerfen Sie skalierbare, produktionsreife KI-Lösungen auf der Azure-Plattform.",
-      duration: "2-3 Tage",
-      level: "Advanced",
-    },
-    {
-      icon: Lock,
-      title: "AI-Richtlinien & DSGVO-Compliance",
-      description: "Etablieren Sie unternehmensweite KI-Governance und rechtskonforme Compliance-Rahmen.",
-      duration: "1 Tag",
-      level: "Strategic",
-    },
-    {
-      icon: Cpu,
-      title: "AI Agenten Workshop",
-      description: "Entwickeln Sie autonome KI-Agenten für automatisierte Geschäftsprozesse und optimierte Workflows.",
-      duration: "3 Tage",
-      level: "Advanced",
-    },
-    {
-      icon: TrendingUp,
-      title: "Forschungszulage AI Projekte",
-      description: "Nutzen Sie staatliche Förderungsprogramme für KI-Innovationen und optimieren Sie Ihre Investitionen.",
-      duration: "2 Tage",
-      level: "Strategic",
-    },
-  ];
-
-  const cloudWorkshops = [
-    {
-      icon: TrendingUp,
-      title: "Cloud Potential Assessment",
-      description: "Identifizieren Sie schnell das maximale Cloud-Potential und Optimierungsmöglichkeiten Ihres Unternehmens.",
-      duration: "1-2 Tage",
-      level: "Foundation",
-    },
-    {
-      icon: Code,
-      title: "IaC Infrastructure as Code Workshop",
-      description: "Implementieren Sie Infrastructure-as-Code für reproduzierbare, sichere und skalierbare Cloud-Deployments.",
-      duration: "3 Tage",
-      level: "Advanced",
-    },
-    {
-      icon: TrendingUp,
-      title: "Azure Pricing Assessment",
-      description: "Führen Sie umfassende Azure-Kostenanalysen durch und identifizieren Sie Einsparungspotenziale.",
-      duration: "1 Tag",
-      level: "Foundation",
-    },
-    {
-      icon: Cloud,
-      title: "Azure Landing Zone Workshop",
-      description: "Entwerfen Sie sichere, skalierbare Azure Landing Zones für Ihre Enterprise-Umgebung.",
-      duration: "2-3 Tage",
-      level: "Advanced",
-    },
-    {
-      icon: Cpu,
-      title: "Platform Engineering & DX Strategy",
-      description: "Entwickeln Sie eine Platform-Engineering-Strategie zur Optimierung der Developer Experience.",
-      duration: "2 Tage",
-      level: "Strategic",
-    },
-    {
-      icon: Lock,
-      title: "Zero Trust für Azure & Kubernetes",
-      description: "Implementieren Sie Zero-Trust-Security-Architekturen für Azure und Kubernetes.",
-      duration: "2-3 Tage",
-      level: "Advanced",
-    },
-  ];
+  
 
   return (
     <div className="pt-32">
@@ -233,172 +145,6 @@ export default function TrainingsPage() {
                           👥 {training.target}
                         </span>
                       </div>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* AI Workshops & Trainings Section */}
-      <section id="ki-workshops" className="py-24 px-4 bg-gradient-to-b from-white via-slate-50/40 to-white relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-brand-primary/10 rounded-full blur-3xl opacity-50 mix-blend-multiply" />
-          <div className="absolute bottom-10 left-10 w-80 h-80 bg-brand-accent/10 rounded-full blur-3xl opacity-50 mix-blend-multiply" />
-        </div>
-
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-6 inline-block">
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-brand-primary/15 border border-brand-primary/40 rounded-full text-sm font-semibold text-brand-primary">
-                🧠 KI & Künstliche Intelligenz
-              </span>
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Spezialisierte KI-Trainings & Workshops
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Intensive, praxisorientierte Workshops für schnelle Implementierung und messbare Geschäftsergebnisse.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {aiWorkshops.map((item, idx) => {
-              const Icon = item.icon;
-              const levelColors: Record<string, string> = {
-                Foundation: "bg-blue-50 text-blue-700 border-blue-200",
-                Advanced: "bg-purple-50 text-purple-700 border-purple-200",
-                Strategic: "bg-orange-50 text-orange-700 border-orange-200",
-              };
-              return (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  className="group relative h-full overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 to-brand-accent/15 rounded-2xl blur-xl opacity-0 group-hover:opacity-70 transition-all duration-500" />
-                  <div className="relative h-full p-6 bg-white/90 backdrop-blur-lg rounded-2xl border-2 border-slate-100 group-hover:border-brand-primary/60 transition-all duration-300 shadow-lg group-hover:shadow-xl group-hover:shadow-brand-primary/15 flex flex-col">
-                    
-                    <div className="mb-4 flex items-start justify-between">
-                      <div className="p-3 bg-gradient-to-br from-brand-primary/15 to-brand-accent/10 rounded-lg group-hover:scale-110 transition-transform duration-300 group-hover:rotate-3">
-                        <Icon className="w-6 h-6 text-brand-primary" />
-                      </div>
-                      <span className={`px-3 py-1 rounded-lg text-xs font-bold border ${levelColors[item.level]}`}>
-                        {item.level}
-                      </span>
-                    </div>
-
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-brand-primary transition-colors line-clamp-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed text-sm flex-grow mb-4">
-                      {item.description}
-                    </p>
-                    
-                    <div className="pt-4 border-t border-slate-200">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg">
-                        ⏱️ {item.duration}
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Cloud & Infrastructure Workshops Section */}
-      <section id="cloud-workshops" className="py-24 px-4 bg-gradient-to-b from-slate-50 via-white to-slate-50 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 left-20 w-72 h-72 bg-brand-accent/10 rounded-full blur-3xl opacity-50 mix-blend-multiply" />
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-brand-primary/10 rounded-full blur-3xl opacity-50 mix-blend-multiply" />
-        </div>
-
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-6 inline-block">
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-brand-accent/15 border border-brand-accent/40 rounded-full text-sm font-semibold text-brand-accent">
-                ☁️ Cloud & Infrastructure
-              </span>
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Cloud & Infrastructure Workshops
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Umfassende Workshops und Bewertungen für zukunftssichere Cloud-Infrastrukturen.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {cloudWorkshops.map((item, idx) => {
-              const Icon = item.icon;
-              const levelColors: Record<string, string> = {
-                Foundation: "bg-blue-50 text-blue-700 border-blue-200",
-                Advanced: "bg-purple-50 text-purple-700 border-purple-200",
-                Strategic: "bg-orange-50 text-orange-700 border-orange-200",
-              };
-              return (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  className="group relative h-full overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-accent/20 to-brand-primary/15 rounded-2xl blur-xl opacity-0 group-hover:opacity-70 transition-all duration-500" />
-                  <div className="relative h-full p-6 bg-white/90 backdrop-blur-lg rounded-2xl border-2 border-slate-100 group-hover:border-brand-accent/60 transition-all duration-300 shadow-lg group-hover:shadow-xl group-hover:shadow-brand-accent/15 flex flex-col">
-                    
-                    <div className="mb-4 flex items-start justify-between">
-                      <div className="p-3 bg-gradient-to-br from-brand-accent/15 to-brand-primary/10 rounded-lg group-hover:scale-110 transition-transform duration-300 group-hover:rotate-3">
-                        <Icon className="w-6 h-6 text-brand-accent" />
-                      </div>
-                      <span className={`px-3 py-1 rounded-lg text-xs font-bold border ${levelColors[item.level]}`}>
-                        {item.level}
-                      </span>
-                    </div>
-
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-brand-accent transition-colors line-clamp-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed text-sm flex-grow mb-4">
-                      {item.description}
-                    </p>
-                    
-                    <div className="pt-4 border-t border-slate-200">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg">
-                        ⏱️ {item.duration}
-                      </span>
                     </div>
                   </div>
                 </motion.div>
