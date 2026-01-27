@@ -34,6 +34,7 @@ export default function Header() {
     { label: "Branchen", href: "/industries" },
     { label: "Fallstudien", href: "/cases" },
     { label: "Trainings", href: "/trainings" },
+    { label: "Einblicke", href: "/insights" },
     { label: "Unternehmen", href: "/company" },
     { label: "Karriere", href: "/careers" },
   ];

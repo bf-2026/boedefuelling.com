@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { BookOpen, Zap, Brain, Cloud, Lock, TrendingUp, Cpu, Code } from "lucide-react";
+import { BookOpen, Zap, Lock } from "lucide-react";
 import { Button } from "../../components/ui/Button";
 
 export default function TrainingsPage() {

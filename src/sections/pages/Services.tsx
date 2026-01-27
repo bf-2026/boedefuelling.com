@@ -617,8 +617,8 @@ export default function KIDatenanalysePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.05 }}
-                    onClick={() => service.details && setSelectedOffering(service)}
-                    className={`group relative ${service.details ? 'cursor-pointer' : ''}`}
+                    onClick={() => (service as any).details && setSelectedOffering(service)}
+                    className={`group relative ${(service as any).details ? 'cursor-pointer' : ''}`}
                   >
                     <div className={`absolute inset-0 bg-gradient-to-br ${category.color} rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500`} />
                     <div className="relative h-full p-6 bg-white rounded-2xl border-2 border-slate-100 group-hover:border-brand-primary/30 transition-all duration-300 shadow-lg group-hover:shadow-xl flex flex-col">
