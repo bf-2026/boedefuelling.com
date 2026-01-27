@@ -3,25 +3,23 @@ import { Brain, BarChart3 } from "lucide-react";
 
 const aiServices = [
   {
-    category: "Schnellstart Angebote",
+    category: "KI Angebote",
     icon: Brain,
     items: [
-      "6-Wochen-Pilotprojekt Generative AI",
-      "Firmeninterner Chatbot (DSGVO)",
-      "Document Intelligence Starter (OCR + AI)",
-      "Azure AI Plattform aufsetzen",
-      "Private AI Infrastruktur",
+      "KI Service-Chatbot für Techniker",
+      "Sichere KI-Infrastruktur",
+      "Wissensmanagement für Bestandsanlagen",
+      "KI-Schulung für Fachabteilungen",
     ],
   },
   {
-    category: "IT-Projekte",
+    category: "Prozess-Automatisierung",
     icon: BarChart3,
     items: [
-      "Controlling-Cockpit Sprint (Power BI)",
-      "Datenplattform Plus (Microsoft Fabric)",
-      "Chatbot mit Open WebUI",
-      "Datenintegration für AI-Vektordatenbanken",
-      "Computervision Qualitätskontrolle",
+      "Automatisierte Angebotserstellung (CPQ)",
+      "Workflow-Automatisierung von CAD-Aufgaben",
+      "Automatisierte Maschinendatenverarbeitung",
+      "Automatisierte Teilebestellung bei Lieferanten",
     ],
   },
 ];
@@ -36,10 +34,10 @@ export default function AIServicesSection() {
         className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="mb-12 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-            KI & Datenanalyse
+            KI & Automatisierung
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto mb-8">
-            Innovative KI-Lösungen für datengetriebene Entscheidungen
+            Innovative KI-Lösungen und Automatisierung für mittelständische Unternehmen der Fertigungsindustrie
           </p>
         </div>
 
