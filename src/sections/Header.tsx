@@ -32,11 +32,9 @@ export default function Header() {
   const navItems = [
     { label: "Dienstleistungen", href: "/services" },
     { label: "Branchen", href: "/industries" },
-    { label: "Fallstudien", href: "/cases" },
     { label: "Trainings", href: "/trainings" },
-    { label: "Einblicke", href: "/insights" },
+    { label: "Blog", href: "/insights" },
     { label: "Unternehmen", href: "/company" },
-    { label: "Karriere", href: "/careers" },
   ];
 
   return (
