@@ -42,12 +42,6 @@ export default function Impressum() {
                   <span className="font-semibold">Registergericht:</span>{" "}
                   Amtsgericht Stuttgart
                 </p>
-                <p>
-                  <span className="font-semibold">
-                    Umsatzsteuer-ID gem. § 27a UStG:
-                  </span>{" "}
-                  DE -----
-                </p>
               </div>
             </section>
 
