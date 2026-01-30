@@ -19,12 +19,20 @@ export default function IndustriesPage() {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {[
-            { name: "Fertigung", description: "Optimiere Produktionsprozesse und Lieferketten" },
-            { name: "Finanzen", description: "Automatisiere Compliance und Finanzabwicklung" },
-            { name: "Gesundheitswesen", description: "Verbessere die Patientenversorgung durch Prozessautomatisierung" },
-            { name: "Einzelhandel", description: "Verbessere Kundenerlebnis und Betrieb" },
-            { name: "Logistik", description: "Rationalisiere Verteilung und Bestandsverwaltung" },
-            { name: "Technologie", description: "Beschleunige Entwicklungs- und Bereitstellungszyklen" },
+            {
+              name: "Fertigung",
+              description: "Optimiere Produktionsprozesse und Lieferketten",
+            },
+            {
+              name: "Maschinenbau",
+              description:
+                "Wissensmanagement und Prozessoptimierung in der Maschinenbau-Industrie",
+            },
+            {
+              name: "Anlagenbau",
+              description:
+                "Wissensmanagement und Prozessoptimierung in der Anlagenbau-Industrie",
+            },
           ].map((industry, idx) => (
             <motion.div
               key={idx}
@@ -33,7 +41,9 @@ export default function IndustriesPage() {
               transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
               className="bg-slate-50 p-8 rounded-lg border border-slate-200 hover:border-brand-primary transition-colors">
-              <h3 className="text-2xl font-bold text-slate-900 mb-3">{industry.name}</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                {industry.name}
+              </h3>
               <p className="text-slate-600">{industry.description}</p>
             </motion.div>
           ))}
